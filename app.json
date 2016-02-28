@@ -1,0 +1,6 @@
+{
+  "name": "PHP Getting Started",
+  "description": "A barebones PHP app for use with the palliative mobile app",
+  "repository": "https://github.com/Kaan0200/palliative-serv",
+  "addons": []
+}
