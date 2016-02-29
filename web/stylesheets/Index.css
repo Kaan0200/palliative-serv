@@ -1,6 +1,37 @@
+/* Everything classes */
   * {
     font-family: sans-serif;
   }
+  
+/* Header CSS classes */
+  .headerMainContainer {
+	margin-left:    120px;
+	margin-right:   120px;
+	padding-bottom: 40px;
+	padding-top:    40px;
+	background-color: darkgrey;
+	text-align: -webkit-center;
+	
+	  
+	position:relative;
+  }
+  /* Folded corner stuff */
+  .headerMainContainer:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-width: 0 16px 16px 0;
+	border-style: solid;
+	border-color: #fff #fff purple purple;
+	background: purple;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+	/* Firefox 3.0 damage limitation */
+	display: block; width: 0;
+  }
+  
   .squircleButton_right {
     padding: 10px;
 	border-radius: 5px;
