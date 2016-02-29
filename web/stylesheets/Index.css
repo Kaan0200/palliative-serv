@@ -1,0 +1,42 @@
+  * {
+    font-family: sans-serif;
+  }
+  .squircleButton_right {
+    padding: 10px;
+	border-radius: 5px;
+	background-color: #00BCD4;
+	color: white;
+	display: inline-flex;
+	float: left;
+  }
+  .squircleButton_left {
+    padding: 10px;
+	border-radius: 5px;
+	background-color: #00BCD4;
+	color: white;
+	display: inline-flex;
+	float: right;
+  }
+  
+  .squircleButton_right:hover, 
+  .squircleButton_left:hover  {
+    background-color: purple;
+  }
+  
+  .mainColumn {
+    padding-left:   120px;
+	padding-right:  120px;
+	padding-top:    10px;
+	padding-bottom: 10px;
+	display:        flex;
+  }
+  .rightColumn {
+    padding: 5px;
+    float: right;
+	width: 50%;
+  }
+  .leftColumn {
+    padding: 5px;
+    float: left;
+	width: 50%;
+  }

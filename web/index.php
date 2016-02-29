@@ -1,25 +1,41 @@
-<?php
+<html>
+<head>
+  <?php include 'header.php'; ?>
+</head>
+<body>
+  <?php echo 'sum php text'; ?>
+	<div class="mainColumn">
+		<div class="leftColumn">
+			<p>Use this to access the informational page system. Here you can modify pages, add or remove pages, and change
+			the hierarchical structure.</p>
+		</div>
+		<div class="rightColumn">
+			<div class="squircleButton_right">Informational Heirachy</div>
+		</div>
+	</div>
+	<div class="mainColumn">
+		<div class="leftColumn"> 
+			<div class="squircleButton_left">Quizzing System</div>
+		</div>
+		<div class="rightColumn">
+			<p> Access the quizzing system to remove modify the applications quizzes and questions.</p>
+		</div>
+	</div>
+	<div class="mainColumn">
+		<div class="leftColumn"> 
+			<p> View the database tables relating to application usage and what type of users use the application. </p>
+		</div>
+		<div class="rightColumn">
+			<div class="squircleButton_right">Application Analytics</div>
+		</div>
+	</div>
+	<div class="mainColumn">
+		<div class="leftColumn"> 
+			<div class="squircleButton_left">Admin Settings</div>
+		</div>
+		<div class="rightColumn">
+			<p> Modify settings for the online portal, including login information and user name info. </p>
+		</div>
+	</div>
 
-require('../vendor/autoload.php');
-
-$app = new Silex\Application();
-$app['debug'] = true;
-
-// Register the monolog logging service
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-  'monolog.logfile' => 'php://stderr',
-));
-
-// Register view rendering
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
-
-// Our web handlers
-
-$app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
-});
-
-$app->run();
+</body>
