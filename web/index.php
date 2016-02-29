@@ -1,6 +1,6 @@
 <html>
 <head>
-  <?php include 'views/header.php'; ?>
+  <?php include 'views/header.html'; ?>
 </head>
 <body>
   <?php echo 'sum php text'; ?>
