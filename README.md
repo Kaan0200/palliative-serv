@@ -1,6 +1,6 @@
 # PHP Palliative server
 
-A pretty bare bones server used for updating the palliative mobile app
+A pretty bare bones server used for updating the palliative mobile app.  It has the tools an admin would need.
 
 ## Documentation
 
