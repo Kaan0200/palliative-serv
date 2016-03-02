@@ -9,7 +9,7 @@
 			the hierarchical structure.</p>
 		</div>
 		<div class="rightColumn">
-			<a href="infopages/infopages.php"
+			<a href="infopages/infopages.php">
 				<div class="squircleButton_right">Informational Heirachy</div>
 			</a>
 		</div>
