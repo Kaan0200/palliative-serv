@@ -3,10 +3,14 @@
     font-family: sans-serif;
   }
   
+  .bodyContainer {
+	  margin-left:  20%;
+	  margin-right: 20%;
+	  
+  }
+  
 /* Header CSS classes */
   .headerMainContainer {
-	margin-left:    120px;
-	margin-right:   120px;
 	padding-bottom: 40px;
 	padding-top:    40px;
 	background-color: darkgrey;

@@ -2,7 +2,7 @@
 <head>
   <?php include 'views/header.html'; ?>
 </head>
-<body>
+<body class="bodyContainer">
 	<div class="mainColumn">
 		<div class="leftColumn">
 			<p>Use this to access the informational page system. Here you can modify pages, add or remove pages, and change
