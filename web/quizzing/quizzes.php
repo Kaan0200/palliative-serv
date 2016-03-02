@@ -1,6 +1,6 @@
 <html>
 <head>
-	<?php include 'views/header.html'; ?>
+	<?php include '../views/header.html'; ?>
 </head>
 <body>
 <?php

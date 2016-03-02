@@ -44,5 +44,7 @@
 			<p> Modify settings for the online portal, including login information and user name info. </p>
 		</div>
 	</div>
-
 </body>
+<footer>
+  <?php include 'views/footer.html'; ?>
+</footer>
