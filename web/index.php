@@ -31,7 +31,9 @@
 	</div>
 	<div class="mainColumn">
 		<div class="leftColumn"> 
-			<div class="squircleButton_left">Admin Settings</div>
+			<a href="settings/settings.php">
+				<div class="squircleButton_left">Admin Settings</div>
+			</a>
 		</div>
 		<div class="rightColumn">
 			<p> Modify settings for the online portal, including login information and user name info. </p>
