@@ -3,19 +3,21 @@
   <?php include 'views/header.html'; ?>
 </head>
 <body>
-  <?php echo 'sum php text'; ?>
 	<div class="mainColumn">
 		<div class="leftColumn">
 			<p>Use this to access the informational page system. Here you can modify pages, add or remove pages, and change
 			the hierarchical structure.</p>
 		</div>
 		<div class="rightColumn">
+		<a href="infopages/infopages.php"
 			<div class="squircleButton_right">Informational Heirachy</div>
 		</div>
 	</div>
 	<div class="mainColumn">
 		<div class="leftColumn"> 
-			<div class="squircleButton_left">Quizzing System</div>
+			<a href="quizzing/quizzes.php">
+				<div class="squircleButton_left">Quizzing System</div>
+			</a>
 		</div>
 		<div class="rightColumn">
 			<p> Access the quizzing system to remove modify the applications quizzes and questions.</p>
@@ -26,7 +28,9 @@
 			<p> View the database tables relating to application usage and what type of users use the application. </p>
 		</div>
 		<div class="rightColumn">
-			<div class="squircleButton_right">Application Analytics</div>
+			<a href="analytics/analyze.php">
+				<div class="squircleButton_right">Application Analytics</div>
+			</a>
 		</div>
 	</div>
 	<div class="mainColumn">
