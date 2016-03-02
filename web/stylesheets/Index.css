@@ -3,7 +3,7 @@
     font-family: sans-serif;
   }
   
-  .bodyContainer {
+  body {
 	  margin-left:  20%;
 	  margin-right: 20%;
 	  
@@ -59,8 +59,6 @@
   }
   
   .mainColumn {
-    padding-left:   120px;
-	padding-right:  120px;
 	padding-top:    10px;
 	padding-bottom: 10px;
 	display:        flex;
