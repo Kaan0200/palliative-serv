@@ -5,6 +5,7 @@
 <body>
 <?php
   echo "reached the informational pages";
+  include sql_connection.php;
 ?>
 </body>
 </html>
