@@ -6,6 +6,8 @@
 	?>
 </head>
 <body>
+<?php
   sql_connect();
+?>
 </body>
 </html>
