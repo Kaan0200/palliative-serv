@@ -17,6 +17,8 @@
   
 ?>
 
+Use this page to edit, add, or delete pages that already exist in the application.
+<hr>
 <div>
 	<div>
 		<div class="LabelColumn">Parent Page:</div>
