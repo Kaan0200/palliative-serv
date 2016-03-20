@@ -19,10 +19,13 @@
 
 <dir>
  Parent Page: <select> </select>
+ 
  Title: <input type="text"> </input>
+ 
  Subtitle: <input type="text"> </input>
  
  Text: <input type="text"></input>
+ 
  Detail Text: <input type="text"></input>
  
  Link Text: <input type="text"></input>
