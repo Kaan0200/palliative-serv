@@ -18,15 +18,15 @@
 ?>
 
 <dir>
- Parent Page: <select> </select>
+ Parent Page: <select> </select> <br>
  
- Title: <input type="text"> </input> <br>
+ Title: <input type="text"> </input> 
  
- Subtitle: <input type="text"> </input>
+ Subtitle: <input type="text"> </input> <br>
  
- Text: <textarea rows="5" cols="50"></textarea> \n
+ Text: <textarea rows="5" cols="50"></textarea> <br>
  
- Detail Text: <input type="text"></input>
+ Detail Text: <textarea rows="5" cols="50"></textarea> <br>
  
  Link Text: <input type="text"></input>
  
