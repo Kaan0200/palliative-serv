@@ -40,19 +40,20 @@
 </div>
 
 
+<style>
+  .LabelColumn {
+	float: left;
+	width: 20%;
+	padding-top: 2px;
+  }
+  .InputColumn {
+	padding-top: 2px;
+  }
+</style>
 
 </body>
 <?php
   include '../views/footer.html';
 ?>
 
-<style>
-  .LabelColumn {
-	  
-	  float: left;
-  }
-  .InputColumn {
-	  float: right;
-  }
-</style>
 </html>
