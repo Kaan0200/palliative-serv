@@ -20,11 +20,11 @@
 <dir>
  Parent Page: <select> </select>
  
- Title: <input type="text"> </input>
+ Title: <input type="text"> </input> <br>
  
  Subtitle: <input type="text"> </input>
  
- Text: <input type="text"></input>
+ Text: <textarea rows="5" cols="50"></textarea> \n
  
  Detail Text: <input type="text"></input>
  
