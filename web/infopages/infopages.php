@@ -24,6 +24,7 @@
 		<br>
 		<div class="LabelColumn">Title:</div>
 		<div class="InputColumn"><input type="text" name="TitleInput"></input></div> 
+		<br>
 		<div class="LabelColumn">Subtitle:</div>
 		<div class="InputColumn"><input type="text" name="SubtitleInput"></input></div>
 		<br>
@@ -53,5 +54,5 @@
   .InputColumn {
 	  float: right;
   }
-</style
+</style>
 </html>
