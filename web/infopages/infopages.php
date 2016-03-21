@@ -19,6 +19,7 @@
 
 Use this page to edit, add, or delete pages that already exist in the application.
 <hr>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 <div>
 	<div>
 		<div class="LabelColumn">Parent Page:</div>
@@ -40,6 +41,7 @@ Use this page to edit, add, or delete pages that already exist in the applicatio
 		<div class="InputColumn"><input type="text" name="LinkTextInput"></input></div>
 	</div>
 </div>
+<input type="submit" name="submit" value="Submit">
 
 
 <style>
