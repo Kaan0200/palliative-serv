@@ -30,12 +30,9 @@ function select_star($table) {
 		echo $query;
 		
 		if ($result = $mysqli->query($query)) {
-			while ($row = $result->fetch_row()) {
-				echo ("%s : %s : %s\n", $row[0], $row[1], $row[2]);
+			return $result;
 			}
 		}
-		
-		$result->close();
 	}
 	
 	$conn-> close();
