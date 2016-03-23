@@ -6,6 +6,7 @@
 <body>
 <?php 
   sql_connect();
+  select_star("test");
 ?>
 </body>
 </html>
