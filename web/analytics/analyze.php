@@ -4,10 +4,8 @@
 	<?php include '../sql_connection.php'; ?>
 </head>
 <body>
-<?php
-  echo "reached the analytics page";
-  
-  echo sql_connection();
+<?php 
+  sql_connect();
 ?>
 </body>
 </html>
