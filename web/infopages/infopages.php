@@ -14,7 +14,7 @@
   $title = $subtitle = $text = $detailtext = $linktext = "";
   // error holders
   $titleErr = $subtitleErr = $textErr = $textDetErr = linkTextErr = "";
-  
+  /*
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// handle the title
 	if (empty($_POST["title"])) {
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!preg_match("/^[a-zA-Z0-9 ]*$/",$linktext)) {
 		$linkTextErr = "Only letters, numbers and white space allowed in the subtitle";
 	}
-  }
+  }  */
   
 function clean_input($data) {
 	$data = trim($data);
