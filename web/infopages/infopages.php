@@ -11,8 +11,7 @@
   $page_id = -1;
   $parent_id = 0;
   // empty variable holders
-  $title = $subtitle = $text = $detailtext = $linktext = "";
-  // error holders
+  $title    = $subtitle    = $text    = $detailtext = $linktext   = "";
   $titleErr = $subtitleErr = $textErr = $textDetErr = linkTextErr = "";
   
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
