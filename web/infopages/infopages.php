@@ -33,14 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 	// handle the maintext
 	$text = clean_input($_POST["text"]);
-	if (preg_match("[^\w\.@-]"), $text) {
+	if (preg_match("[^\w\.@-]", $text) {
 		$textErr = "Invalid characters included in text block.  Allowed characters are \n
 		            periods, @ symbol, underscore, or hyphen.";
 	}
 	
 	// handle the detail text
 	$detailtext = clean_input($_POST["detailtext"]);
-	if (preg_match("[^\w\.@-]"), $detailtext) {
+	if (preg_match("[^\w\.@-]", $detailtext) {
 		$textDetErr = "Invalid characters included in detail text block.  Allowed characters\n
 		            are periods, @ symbol, underscore, or hyphen.";
 	}
