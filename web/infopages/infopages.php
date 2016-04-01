@@ -12,7 +12,7 @@
   $parent_id = 0;
   // empty variable holders
   $title    = $subtitle    = $text    = $detailtext = $linktext   = "";
-  $titleErr = $subtitleErr = $textErr = $textDetErr = linkTextErr = "";
+  $titleErr = $subtitleErr = $textErr = $textDetErr = $linkTextErr = "";
   
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// handle the title
