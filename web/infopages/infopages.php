@@ -2,7 +2,7 @@
 <head>
 	<?php 
 	include '../views/header.html';
-	include '../sql_connection.php';
+//	include '../sql_connection.php';
 	?>
 </head>
 <body>
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!preg_match("/^[a-zA-Z0-9 ]*$/",$linktext)) {
 		$linkTextErr = "Only letters, numbers and white space allowed in the subtitle";
 	}
-  }  
+}  
   
 function clean_input($data) {
 	$data = trim($data);
