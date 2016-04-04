@@ -14,7 +14,7 @@
   $title    = $subtitle    = $text    = $detailtext = $linktext   = "";
   $titleErr = $subtitleErr = $textErr = $textDetErr = $linkTextErr = "";
   
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["Submit"] == "POST") {
 	// handle the title
 	if (empty($_POST["title"])) {
 		$titleErr = "Title is required for an article";
@@ -98,7 +98,7 @@ function clean_input($data) {
 		</div>
 	</div>
 </div>
-<input type="submit" name="submit" value="Submit">
+<input type="submit" name="Submit" value="Submit">
 </form>
 
 <?php
