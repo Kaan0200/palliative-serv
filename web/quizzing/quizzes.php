@@ -23,7 +23,9 @@
 		$test = $_POST['testinput'];
 		echo $test . ": this stuff";
 	}
-
+?>
 </body>
-<?php include '../views/footer.html'; ?>
+<?php 
+  include '../views/footer.html'; 
+?>
 </html>
