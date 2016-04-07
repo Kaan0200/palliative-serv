@@ -42,10 +42,9 @@ function select_star($table) {
 		
 		if ($result = $mysqli->query($query)) {
 			return $result;
-			}
 		}
 	}
-	
 	$conn-> close();
 }
+
 ?>

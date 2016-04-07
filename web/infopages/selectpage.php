@@ -17,7 +17,6 @@
 			</div>
 			<div class="centered">
 				<?php
-					$value = $_POST["valuelist"];
 					$con = get_connection();
 					
 					$result = mysqli_query($con, "SELECT a FROM test");
