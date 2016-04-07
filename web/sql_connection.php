@@ -6,6 +6,7 @@
 $servername = "l3855uft9zao23e2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306";
 $username = "blwusy6p9r16bm03";
 $password = "z0j9g1st5u43bf3g";
+$schema   = "pd7pzy9z4cu7ces1";
 
 function test_connection() {
   // Create connection
@@ -21,7 +22,7 @@ function test_connection() {
 }
 
 function get_connection() {
-	$conn = new mysqli($servername, $username, $password);
+	$conn = new mysqli_connect($servername, $username, $password, $schema);
 	
 	  // Check connection
 	if ($conn->connect_error) {
