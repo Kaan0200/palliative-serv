@@ -10,12 +10,14 @@
 
 <div>
 	<div>
-		<div>
-			Select Page:
-		</div>
-		<div>
-			<select name="ParentSelect"> </select>">
-		</div>
+		<form name="selectform" action="infopages.php">
+			<div>
+				Select Page:
+			</div>
+			<div>
+				<select name="ParentSelect"> </select>
+			</div>
+		</form>
 	</div>
 </div>
 
