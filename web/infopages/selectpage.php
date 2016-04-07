@@ -1,9 +1,10 @@
 <html>
 <head>
-	<?php 
+<link rel="stylesheet" type="text/css" href="/stylesheets/FormStyle.css" />
+<?php 
 	include '../views/header.html';
 	include '../sql_connection.php';
-	?>
+?>
 </head>
 <body>
 <h2>Select an existing page to edit or create a new info page.</h2>
@@ -21,9 +22,11 @@
 					
 					$result = mysqli_query($con, "SELECT a FROM test");
 					
-					while ($row = mysqli_fetch_assoc($result)) {
-						echo "{$row['a']}";
-					}
+					printf("selected returned %d rows.\n", mysqli_num_rows($result));
+					
+					//while ($row = mysqli_fetch_assoc($result)) {
+					//	echo "{$row['a']}";
+					//}
 				?>
 			</div>
 		</form>
@@ -45,7 +48,6 @@
 
 </body>
 <?php
-  include '../views/footer.html';
-  include '../stylesheets/FormStyle.css';
+	include '../views/footer.html';
 ?>
 </html>
