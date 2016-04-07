@@ -20,6 +20,17 @@ function test_connection() {
   return True;
 }
 
+function get_connection() {
+	$conn = new mysqli($servername, $username, $password);
+	
+	  // Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}	 
+	
+	return $conn;
+}
+
 function select_star($table) {
 	// create connection
 	$conn = new mysqli($servername, $username, $password);

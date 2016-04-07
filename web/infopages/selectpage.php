@@ -2,6 +2,7 @@
 <head>
 	<?php 
 	include '../views/header.html';
+	include '../sql_connection.php';
 	?>
 </head>
 <body>
@@ -10,12 +11,21 @@
 
 <div>
 	<div>
-		<form name="selectform" action="infopages.php" class="centerform">
+		<form name="selectform" action="infopages.php" class="centerform" method="post">
 			<div class="centered">
 				Select Page:
 			</div>
 			<div class="centered">
-				<select name="ParentSelect"> </select>
+				<?php
+					$value = $_POST["valuelist"];
+					$con = get_connection();
+					
+					$result = mysqli_query($con, "SELECT a FROM test");
+					
+					while ($row = mysqli_fetch_assoc($result)) {
+						echo "{$row['a']}";
+					}
+				?>
 			</div>
 		</form>
 	</div>
