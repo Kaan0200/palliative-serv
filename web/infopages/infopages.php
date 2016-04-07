@@ -117,19 +117,13 @@ echo "<br>";
 
 
 <style>
-  .LabelColumn {
-	float: left;
-	width: 20%;
-	padding-top: 2px;
-  }
-  .InputColumn {
-	padding-top: 2px;
-  }
+
 </style>
 
 </body>
 <?php
   include '../views/footer.html';
+  include '../stylesheets/FormStyle.css';
 ?>
 
 </html>

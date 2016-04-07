@@ -10,11 +10,11 @@
 
 <div>
 	<div>
-		<form name="selectform" action="infopages.php">
-			<div>
+		<form name="selectform" action="infopages.php" class="centerform">
+			<div class="centered">
 				Select Page:
 			</div>
-			<div>
+			<div class="centered">
 				<select name="ParentSelect"> </select>
 			</div>
 		</form>
@@ -22,18 +22,21 @@
 </div>
 
 <style>
-  .LabelColumn {
-	float: left;
-	width: 20%;
-	padding-top: 2px;
+  .centered {
+	  display: inline;
   }
-  .InputColumn {
-	padding-top: 2px;
+  .centerform {
+	text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    vertical-align: middle;
   }
 </style>
 
 </body>
 <?php
   include '../views/footer.html';
+  include '../stylesheets/FormStyle.css';
 ?>
 </html>
