@@ -22,7 +22,7 @@ function test_connection() {
 }
 
 function get_connection() {
-	$conn = mysqli_connect($servername, $username, $password, $schema);
+	$conn = mysqli_connect($servername, $username, $password, NULL);
 	
 	  // Check connection
 	if ($conn->connect_error) {
