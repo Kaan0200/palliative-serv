@@ -33,6 +33,7 @@
 					
 					mysqli_close($con);
 				?>
+				<option value="-1">New Page</option>
 				</select>
 			</div>
 		</form>
