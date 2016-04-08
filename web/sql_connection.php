@@ -22,6 +22,11 @@ function test_connection() {
 }
 
 function get_connection() {
+	global $username;
+	global $servername;
+	global $password;
+	global $schema;
+	
 	$conn = mysqli_connect($servername, $username, $password, $schema);
 	
 	  // Check connection
