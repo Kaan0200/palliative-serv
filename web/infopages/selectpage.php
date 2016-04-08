@@ -14,20 +14,21 @@
 	<div>
 		<form name="selectform" action="infopages.php" class="centerform" method="post">
 			<div class="centered">
-				Select Page:
+				
 			</div>
 			<div class="centered">
 				<select name="pageselector">
 				<?php
 					$con = get_connection();
-					
+					// this is the important query
 					$result = mysqli_query($con, "SELECT a, b FROM test") or die(mysqli_error($con));
 					
 					printf("selected returned %d rows.\n", mysqli_num_rows($result));
 					
 					if ($result->num_rows > 0){
 						while ($row = mysqli_fetch_assoc($result)) {
-							echo "<option value=".row["b"].">".$row["a"]."</option>";
+							// replace the 'a' and 'b' with the column names
+							echo "<option value=".$row["b"].">".$row["a"]."</option>";
 						}
 					} 
 					
@@ -36,6 +37,7 @@
 				<option value="-1">New Page</option>
 				</select>
 			</div>
+			<input type="submit" value="Select">
 		</form>
 	</div>
 </div>
