@@ -18,15 +18,23 @@
 			</div>
 			<div class="centered">
 				<?php
-					$con = get_connection();
+				
+				$servername = "l3855uft9zao23e2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306";
+$username = "blwusy6p9r16bm03";
+$password = "z0j9g1st5u43bf3g";
+$schema   = "pd7pzy9z4cu7ces1";
+
+					$con = mysqli_connect($servername, $username, $password, $schema);
 					
-					$result = mysqli_query($con, "SELECT a FROM test");
+					$result = mysqli_query($con, "SELECT a FROM test") or die(mysqli_error($con));
 					
 					printf("selected returned %d rows.\n", mysqli_num_rows($result));
 					
 					//while ($row = mysqli_fetch_assoc($result)) {
 					//	echo "{$row['a']}";
 					//}
+					
+					mysqli_close($con);
 				?>
 			</div>
 		</form>
