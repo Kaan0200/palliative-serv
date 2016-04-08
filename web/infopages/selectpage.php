@@ -18,6 +18,7 @@
 			</div>
 			<div class="centered">
 				<select name="pageselector">
+				<option value="-1">New Page</option>
 				<?php
 					$con = get_connection();
 					// this is the important query
@@ -34,7 +35,6 @@
 					
 					mysqli_close($con);
 				?>
-				<option value="-1">New Page</option>
 				</select>
 			</div>
 			<input type="submit" value="Select">
