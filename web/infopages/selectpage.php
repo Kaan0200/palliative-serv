@@ -25,9 +25,11 @@
 					
 					printf("selected returned %d rows.\n", mysqli_num_rows($result));
 					
-					//while ($row = mysqli_fetch_assoc($result)) {
-					//	echo "{$row['a']}";
-					//}
+					if ($result->num_rows > 0){
+						while ($row = mysqli_fetch_assoc($result)) {
+							echo "<div>".$row["a"]."</div>";
+						}
+					} 
 					
 					mysqli_close($con);
 				?>
