@@ -17,22 +17,23 @@
 				Select Page:
 			</div>
 			<div class="centered">
+				<select name="pageselector">
 				<?php
-
 					$con = get_connection();
 					
-					$result = mysqli_query($con, "SELECT a FROM test") or die(mysqli_error($con));
+					$result = mysqli_query($con, "SELECT a, b FROM test") or die(mysqli_error($con));
 					
 					printf("selected returned %d rows.\n", mysqli_num_rows($result));
 					
 					if ($result->num_rows > 0){
 						while ($row = mysqli_fetch_assoc($result)) {
-							echo "<div>".$row["a"]."</div>";
+							echo "<option value=".row["b"].">".$row["a"]."</option>";
 						}
 					} 
 					
 					mysqli_close($con);
 				?>
+				</select>
 			</div>
 		</form>
 	</div>
