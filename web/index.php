@@ -14,11 +14,12 @@
 	$username = mysqli_real_escape_string($connection, $_POST['username']);
 	$password = mysqli_real_escape_string($connection, $_POST['password']);
 	
-	$sql = "SELECT id FROM settings WHERE username = '$username' and password = '$password'";
+	$sql = "SELECT id FROM settings WHERE name = 'username' and value = '".$username."' UNION SELECT id from settings WHERE name = 'password' and value = '".$password."'";
 	
 	$result = mysqli_query($connection, $sql);
-	$rows = mysqli_num_rows(mysqli_fetch_assoc($result));
-	if ($rows == 2) {
+	$count = mysqli_num_rows($result);
+	
+	if ($count == 2) {
 		$_SESSION['login_user']=$username;
 		header("location: menu.php");
 	} else {
@@ -38,6 +39,7 @@
 	</div>
 	<input type="submit" name="submit" value="Login">
   </form>
+  <?php echo $error ?>
 </body>
 <style>
  .form{
