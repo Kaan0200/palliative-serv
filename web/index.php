@@ -15,6 +15,16 @@
 	$password = mysqli_real_escape_string($connection, $_POST['password']);
 	
 	$sql = "SELECT id FROM settings WHERE username = '$username' and password = '$password'";
+	
+	$result = mysqli_query($connection, $sql);
+	$rows = mysqli_num_rows($result);
+	if ($rows == 2) {
+		$_SESSION['login_user']=$username;
+		header("location: menu.php");
+	} else {
+		$error = "Username or Password is invalid";
+	}
+	mysqli_close($connection);
  }
 ?>
   <form class="form" method="post">
