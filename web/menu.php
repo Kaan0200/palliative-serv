@@ -4,6 +4,15 @@
   <?php if(!isset($_SESSION['login_user'])){ header:"Location: .\index.php"; }  ?>
 </head>
 <body>
+<?php 
+if(!isset($_SESSION['login_user'])){
+		header:"Location: .\index.php";
+		echo "Not logged in";
+	} else {
+		echo "logged in";
+	}
+?>
+
 	<div class="mainColumn">
 		<div class="leftColumn">
 			<p>Use this to access the informational page system. Here you can modify pages, add or remove pages, and change
