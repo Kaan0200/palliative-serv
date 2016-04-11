@@ -7,8 +7,6 @@
   include("sql_connection.php");
   
   $connection = get_connection();
-  
-  session_start();
  
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	 
