@@ -1,12 +1,11 @@
 <html>
 <head>
   <?php include 'views/header.html'; ?>
-  <?php if(!isset($_SESSION['login_user'])){ header:"Location: .\index.php"; }  ?>
 </head>
 <body>
 <?php 
 if(!isset($_SESSION['login_user'])){
-		header:"Location: .\index.php";
+		header("Location: .\index.php");
 		echo "Not logged in";
 	} else {
 		echo "logged in";
