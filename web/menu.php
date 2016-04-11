@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php 
-if($_SESSION['valid'] == false)){
+if($_SESSION['valid'] == false){
 		header("Location: index.php");
 		echo "Not logged in";
 	} else if ($_SESSION['valid'] == true){
