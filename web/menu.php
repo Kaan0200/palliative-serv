@@ -4,10 +4,10 @@
 </head>
 <body>
 <?php 
-if(!isset($_SESSION['login_user'])){
-		header("Location: .\index.php");
+if($_SESSION['valid'] == false)){
+		header("Location: index.php");
 		echo "Not logged in";
-	} else {
+	} else if ($_SESSION['valid'] == true){
 		echo "logged in";
 	}
 ?>

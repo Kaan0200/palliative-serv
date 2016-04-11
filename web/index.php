@@ -23,6 +23,7 @@
 	
 	if ($count == 2) {
 		$_SESSION['login_user']=$username;
+		$_SESSION['valid'] = true;
 		header("location: menu.php");
 	} else {
 		$error = "Username or Password is invalid";
