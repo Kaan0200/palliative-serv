@@ -19,6 +19,7 @@
 	$count = mysqli_num_rows($result);
 	
 	if ($count == 2) {
+		error_log("setting variable for session!");
 		$_SESSION['login_user']=$username;
 		$_SESSION['valid'] = true;
 		header("location: menu.php");

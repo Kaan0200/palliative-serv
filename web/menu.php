@@ -5,11 +5,13 @@
 <body>
 <?php 
 if($_SESSION['valid'] == false){
-		header("Location: index.php");
-		echo "Not logged in";
-	} else if ($_SESSION['valid'] == true){
-		echo "logged in";
-	}
+	error_log("valid is false!");
+	header("Location: index.php");
+	echo "Not logged in";
+} else if ($_SESSION['valid'] == true){
+	error_log("valid is true!");
+	echo "logged in";
+}
 ?>
 
 	<div class="mainColumn">
