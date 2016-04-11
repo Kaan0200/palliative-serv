@@ -17,7 +17,7 @@
 				
 			</div>
 			<div class="centered">
-				<select name="pageselector">
+				<select name="pageselector" style="max-width:400px">
 				<option value="-1">New Page</option>
 				<?php
 					$con = get_connection();
@@ -29,7 +29,9 @@
 					if ($result->num_rows > 0){
 						while ($row = mysqli_fetch_assoc($result)) {
 							// replace the 'a' and 'b' with the column names
-							echo "<option value=".$row["id"].">".$row["title"]."</option>";
+							if ($row["id"] != 1) {
+								echo "<option value=".$row["id"].">".$row["title"]."</option>";
+							}
 						}
 					} 
 					
