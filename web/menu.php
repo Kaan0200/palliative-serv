@@ -4,6 +4,7 @@
 </head>
 <body>
 <?php 
+session_start();
 if($_SESSION['valid'] == false){
 	error_log("valid is false!");
 	header("Location: index.php");
