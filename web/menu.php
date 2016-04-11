@@ -1,6 +1,7 @@
 <html>
 <head>
   <?php include 'views/header.html'; ?>
+  <?php if(!isset($_SESSION['login_user'])){ header:"Location: index.php" }  ?>
 </head>
 <body>
 	<div class="mainColumn">
