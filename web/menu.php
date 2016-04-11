@@ -1,18 +1,12 @@
 <html>
 <head>
   <?php include 'views/header.html'; ?>
+  
 </head>
 <body>
 <?php 
 session_start();
-if($_SESSION['valid'] == false){
-	error_log("valid is false!");
-	header("Location: index.php");
-	echo "Not logged in";
-} else if ($_SESSION['valid'] == true){
-	error_log("valid is true!");
-	echo "logged in";
-}
+if($_SESSION['valid'] == false){ header("Location: index.php"); }
 ?>
 
 	<div class="mainColumn">
