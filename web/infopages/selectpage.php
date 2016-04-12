@@ -6,7 +6,7 @@
 	include '../sql_connection.php';
 	
 	session_start();
-	if($_SESSION['valid'] == false){ header("Location: index.php"); }
+	if($_SESSION['valid'] == false){ header("Location: ../index.php"); }
 ?>
 </head>
 <body>
