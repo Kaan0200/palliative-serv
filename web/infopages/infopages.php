@@ -11,6 +11,10 @@
 <body>
 <?php
 
+	//populate the parent page selector
+	
+	
+
   $page_id = -1;
   $parent_id = 0;
   // empty variable holders
@@ -72,7 +76,24 @@ function clean_input($data) {
 	<div>
 		<div class="LabelColumn">Parent Page:</div>
 		<div class="InputColumn">
-			<select name="ParentSelect"> </select>
+			<select name="ParentSelect" style="max-width:400px">
+				<?php 
+					$con = get_connection();
+					// this is the important query
+					$result = mysqli_query($con, "SELECT id, title FROM pages") or die(mysqli_error($con));
+					
+					if ($result->num_rows > 0){
+						while ($row = mysqli_fetch_assoc($result)) {
+							// replace the 'a' and 'b' with the column names
+							if ($row["id"] != 1) {
+								echo "<option value=".$row["id"].">".$row["title"]."</option>";
+							}
+						}
+					} 
+					
+					mysqli_close($con);
+				?>
+			</select>
 		</div>
 		<br>
 		<div class="LabelColumn">Title:</div>
