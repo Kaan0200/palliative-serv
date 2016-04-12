@@ -12,7 +12,7 @@
 
 <div>
 	<div>
-		<form name="selectform" action="infopages.php" class="centerform" method="post">
+		<form name="selectform" action="infopages.php" class="centerform" method="GET">
 			<div class="centered">
 				
 			</div>
