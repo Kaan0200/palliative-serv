@@ -14,12 +14,14 @@
 	//populate the parent page selector
 	
 	
-
-  $page_id = -1;
+  if (empty($_GET['pageselector'])) {
+	  $page_id = -1;
+  }
+  $page_id = $_GET['pageselector'];
   $parent_id = 0;
   // empty variable holders
-  $title    = $subtitle    = $text    = $detailtext = $linktext   = "";
-  $titleErr = $subtitleErr = $textErr = $textDetErr = $linkTextErr = "";
+  $title    = $text    = $detailtext = $linktext   = "";
+  $titleErr = $textErr = $textDetErr = $linkTextErr = "";
   
 if ($_SERVER["Submit"] == "POST") {
 	// handle the title
@@ -30,12 +32,6 @@ if ($_SERVER["Submit"] == "POST") {
 		if (!preg_match("/^[a-zA-Z0-9 ]*$/",$title)) {
 			$titleErr = "Only letters, numbers and white space allowed in the title";
 		}
-	}
-	  
-	// handle the subtitle
-	$subtitle = clean_input($_POST["subtitle"]);
-	if (!preg_match("/^[a-zA-Z0-9 ]*$/",$subtitle)) {
-		$titleErr = "Only letters, numbers and white space allowed in the subtitle";
 	}
 	
 	// handle the maintext
@@ -96,15 +92,10 @@ function clean_input($data) {
 			</select>
 		</div>
 		<br>
-		<div class="LabelColumn">Title:</div>
+		<div class="LabelColumn">Title: *</div>
 		<div class="InputColumn">
 			<input type="text" name="TitleInput" value="<?php echo $title;?>"></input>
 		</div> 
-		<br>
-		<div class="LabelColumn">Subtitle:</div>
-		<div class="InputColumn">
-			<input type="text" name="SubtitleInput" value="<?php echo $subtitle;?>"></input>
-		</div>
 		<br>
 		<div class="LabelColumn">Text:</div>
 		<div class="InputColumn">
@@ -126,17 +117,10 @@ function clean_input($data) {
 </form>
 
 <?php
-echo "<h3>Input:</h3>";
-echo $title;
-echo "<br>";
-echo $subtitle;
-echo "<br>";
-echo $text;
-echo "<br>";
-echo $detailtext;
-echo "<br>";
-echo $linktext;
-echo "<br>";
+
+if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
+	echo "All clear";
+}
 ?>
 
 
