@@ -2,7 +2,7 @@
 <head>
 	<?php 
 	include '../views/header.html';
-//	include '../sql_connection.php';
+	include '../sql_connection.php';
 
 	session_start();
 	if($_SESSION['valid'] == false){ header("Location: ../index.php"); }
