@@ -5,13 +5,10 @@
 <body>
 <?php
   include("sql_connection.php");
-  
+  session_start();
   $connection = get_connection();
  
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	 
-	 // start session now
-	 session_start();
 
 	$username = mysqli_real_escape_string($connection, $_POST['username']);
 	$password = mysqli_real_escape_string($connection, $_POST['password']);
@@ -22,11 +19,13 @@
 	$count = mysqli_num_rows($result);
 	
 	if ($count == 2) {
+		error_log("setting variable for session!");
 		$_SESSION['login_user']=$username;
 		$_SESSION['valid'] = true;
 		header("location: menu.php");
 	} else {
 		$error = "Username or Password is invalid";
+		$_SESSION['valid'] = false;
 	}
 	mysqli_close($connection);
  }
