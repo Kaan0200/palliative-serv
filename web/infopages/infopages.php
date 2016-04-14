@@ -11,6 +11,11 @@
 <body>
 <?php
 
+  // empty variable holders
+  $parent_id = 0;
+  $title    = $text    = $detailtext = $linktext   = "";
+  $titleErr = $textErr = $textDetErr = $linkTextErr = "";
+
   //populate the parent page selector
   if (empty($_GET['pageselector'])) {
 	$page_id = -1;
@@ -30,12 +35,6 @@
 	}
 	mysqli_close($con);
   }
-  
-  // empty variable holders
-  $parent_id = 0;
-  $title    = $text    = $detailtext = $linktext   = "";
-  $titleErr = $textErr = $textDetErr = $linkTextErr = "";
-  
   
   
 if ($_SERVER["Submit"] == "POST") {
