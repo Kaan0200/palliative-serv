@@ -69,7 +69,7 @@ function clean_input($data) {
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 <div>
 	<div>
-		<div class="LabelColumn">Parent Page:</div>
+		<div class="LabelColumn">Parent Page: *</div>
 		<div class="InputColumn">
 			<select name="ParentSelect" style="max-width:400px">
 				<option value="-1">Select A Parent Page</option>
