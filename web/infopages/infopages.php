@@ -11,14 +11,13 @@
 <body>
 <?php
 
-	//populate the parent page selector
-	
-	
+  //populate the parent page selector
   if (empty($_GET['pageselector'])) {
 	  $page_id = -1;
   }
   $page_id = $_GET['pageselector'];
   $parent_id = 0;
+  
   // empty variable holders
   $title    = $text    = $detailtext = $linktext   = "";
   $titleErr = $textErr = $textDetErr = $linkTextErr = "";
@@ -73,6 +72,7 @@ function clean_input($data) {
 		<div class="LabelColumn">Parent Page:</div>
 		<div class="InputColumn">
 			<select name="ParentSelect" style="max-width:400px">
+				<option value="-1">Select A Parent Page</option>
 				<?php 
 					$con = get_connection();
 					// this is the important query
