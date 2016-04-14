@@ -29,7 +29,6 @@
 		$row = mysqli_fetch_assoc($result);
 		$title = $row['title'];
 		$text = $row['text'];
-		error_log("returned text".$text);
 		$detailtext = $row['detail'];
 		$linktext = $row['link_text'];
 	}
@@ -101,7 +100,6 @@ function clean_input($data) {
 							}
 						}
 					} 
-					
 					mysqli_close($con);
 				?>
 			</select>
@@ -114,12 +112,12 @@ function clean_input($data) {
 		<br>
 		<div class="LabelColumn">Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" name="MainTextArea" value="<?php echo $text;?>"></textarea>
+			<textarea rows="5" cols="50" name="MainTextArea"><?php echo $text;?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Detail Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" name="DetailTextArea" value="<?php echo $detailtext;?>"></textarea>
+			<textarea rows="5" cols="50" name="DetailTextArea"><?php echo $detailtext;?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Link Text:</div>
