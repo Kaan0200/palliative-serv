@@ -13,14 +13,28 @@
 
   //populate the parent page selector
   if (empty($_GET['pageselector'])) {
-	  $page_id = -1;
+	$page_id = -1;
+  } else {
+	// grab the id 
+	$page_id = $_GET['pageselector'];
+	$con = get_connection();
+	$result = mysqli_query($con, "SELECT parent_id, title, text, detail, link_text FROM pages WHERE id = ".$page_id) or die(mysqli_error($con));
+	// peel off results from query
+	if ($result->num_rows > 0) {
+		$row = mysqli_fetch_assoc($result);
+		$title = $row['title'];
+		$text = $row['text'];
+		$detailtext = $row['detail'];
+		$linktext = $row['link_text'];
+	}
   }
-  $page_id = $_GET['pageselector'];
-  $parent_id = 0;
   
   // empty variable holders
+  $parent_id = 0;
   $title    = $text    = $detailtext = $linktext   = "";
   $titleErr = $textErr = $textDetErr = $linkTextErr = "";
+  
+  
   
 if ($_SERVER["Submit"] == "POST") {
 	// handle the title
