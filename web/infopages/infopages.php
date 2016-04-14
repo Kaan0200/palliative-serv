@@ -17,6 +17,7 @@
   } else {
 	// grab the id 
 	$page_id = $_GET['pageselector'];
+	error_log($page_id." Selected page");
 	$con = get_connection();
 	$result = mysqli_query($con, "SELECT parent_id, title, text, detail, link_text FROM pages WHERE id = ".$page_id) or die(mysqli_error($con));
 	// peel off results from query
@@ -27,6 +28,7 @@
 		$detailtext = $row['detail'];
 		$linktext = $row['link_text'];
 	}
+	mysqli_close($con);
   }
   
   // empty variable holders
