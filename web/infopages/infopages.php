@@ -117,9 +117,14 @@ function clean_input($data) {
 </form>
 
 <?php
-
-if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
-	echo "All clear";
+if ($_SERVER["Submit"] == "POST") {
+	if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
+		echo "All clear";
+	}
+	echo $titleErr;
+	echo $textErr;
+	echo $textDetErr;
+	echo $linktextErr;
 }
 ?>
 
@@ -131,7 +136,6 @@ if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr ==
 </body>
 <?php
   include '../views/footer.html';
-  include '../stylesheets/FormStyle.css';
 ?>
 
 </html>
