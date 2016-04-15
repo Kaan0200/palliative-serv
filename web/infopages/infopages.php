@@ -38,7 +38,8 @@
 		$_POST['text']      = $text;
 		$_POST['detail']    = $detailtext;
 		$_POST['link_text'] = $linktext;
-		error_log(isset($_POST['Submit']));
+		
+		if (isset($_POST['Submit'])) { error_log("POST IS SET, RETURNING A POST"); }  else { error_log("POST IS NOT YET SET"); }
 	}
 	mysqli_close($con);
   }
