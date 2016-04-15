@@ -74,22 +74,22 @@ function clean_input($data) {
 		<br>
 		<div class="LabelColumn">Title: *</div>
 		<div class="InputColumn">
-			<input type="text" name="TitleInput" value="<?php echo $title;?>"></input>
+			<input type="text" name="title" value="<?php echo $title;?>"></input>
 		</div> 
 		<br>
 		<div class="LabelColumn">Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" name="MainTextArea"><?php echo $text;?></textarea>
+			<textarea rows="5" cols="50" name="text"><?php echo $text;?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Detail Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" name="DetailTextArea"><?php echo $detailtext;?></textarea>
+			<textarea rows="5" cols="50" name="detailtext"><?php echo $detailtext;?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Link Text:</div>
 		<div class="InputColumn">
-			<input type="text" name="LinkTextInput" value="<?php echo $linktext;?>"></input>
+			<input type="text" name="linktext" value="<?php echo $linktext;?>"></input>
 		</div>
 	</div>
 </div>
