@@ -130,7 +130,7 @@ function clean_input($data) {
 </form>
 
 <?php
-if ($_SERVER["Submit"] == "POST") {
+if (isset($_POST["Submit"])) {
 	error_log("-----------------submitted form--------------------");
 	if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
 		echo "All clear";
