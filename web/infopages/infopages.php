@@ -14,7 +14,7 @@
   // empty variable holders
   $parent_id = 0;
   $title    = $text    = $detailtext = $linktext   = "";
-  $titleErr = $textErr = $textDetErr = $linkTextErr = "";
+  $titleErr = $textErr = $textDetErr = $linkTextErr = parenterr = "";
 
   //populate the parent page selector
   if (empty($_GET['pageselector'])) {
@@ -27,6 +27,7 @@
 	// peel off results from query
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
+		$parent_id = $row['parent_id'];
 		$title = $row['title'];
 		$text = $row['text'];
 		$detailtext = $row['detail'];
@@ -52,7 +53,7 @@ function clean_input($data) {
 	<div>
 		<div class="LabelColumn">Parent Page: *</div>
 		<div class="InputColumn">
-			<select name="ParentSelect" style="max-width:400px">
+			<select name="parentselect" style="max-width:400px">
 				<option value="-1">Select A Parent Page</option>
 				<?php 
 					$con = get_connection();
@@ -61,9 +62,12 @@ function clean_input($data) {
 					
 					if ($result->num_rows > 0){
 						while ($row = mysqli_fetch_assoc($result)) {
-							// replace the 'a' and 'b' with the column names
 							if ($row["id"] != 1) {
-								echo "<option value=".$row["id"].">".$row["title"]."</option>";
+								if ($row["id"] == $parent_id) {
+									echo "<option selected='true' value=".$row["id"].">".$row["title"]."</option>";
+								} else {
+									echo "<option value=".$row["id"].">".$row["title"]."</option>";
+								}
 							}
 						}
 					} 
@@ -84,12 +88,12 @@ function clean_input($data) {
 		<br>
 		<div class="LabelColumn">Detail Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" name="detailtext"><?php echo $detailtext;?></textarea>
+			<textarea rows="5" cols="50" name="detailtext"><?php echo $_POST["detailtext"];?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Link Text:</div>
 		<div class="InputColumn">
-			<input type="text" name="linktext" value="<?php echo $linktext;?>"></input>
+			<input type="text" name="linktext" value="<?php echo $_POST["linktext"];?>"></input>
 		</div>
 	</div>
 </div>
@@ -99,6 +103,10 @@ function clean_input($data) {
 <?php
 if (isset($_POST["Submit"])) {
 	// test for errors in the fields
+	// handle the parent, it must exist
+	if ($_POST["parentselector"] == -1){
+		$parenterr = "A parent page is required";
+	}
 	// handle the title
 	if (empty($_POST["title"])) {
 		$titleErr = "Title is required for an article";
@@ -126,9 +134,10 @@ if (isset($_POST["Submit"])) {
 		$linkTextErr = "Only letters, numbers and white space allowed in the subtitle";
 	}
 	error_log("-----------------submitted form--------------------");
-	if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
+	if ($parenterr == "" and $titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
 		echo "All clear";
 	} else {
+		echo $parenterr;
 		echo $titleErr;
 		echo $textErr;
 		echo $textDetErr;
