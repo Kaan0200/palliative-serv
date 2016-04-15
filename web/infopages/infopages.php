@@ -34,12 +34,11 @@
 		$detailtext = $row['detail'];
 		$linktext   = $row['link_text'];
 		// push the variables into the post, so we can retreive it
+		$_POST['parent_id'] = $parent_id;
 		$_POST['title']     = $title;
 		$_POST['text']      = $text;
 		$_POST['detail']    = $detailtext;
 		$_POST['link_text'] = $linktext;
-		
-		if (isset($_POST['Submit'])) { error_log("POST IS SET, RETURNING A POST"); }  else { error_log("POST IS NOT YET SET"); }
 	}
 	mysqli_close($con);
   }
@@ -71,7 +70,7 @@ function clean_input($data) {
 					if ($result->num_rows > 0){
 						while ($row = mysqli_fetch_assoc($result)) {
 							if ($row["id"] != 1) {
-								if ($row["id"] == $parent_id) {
+								if ($row["id"] == $_POST["parent_id"]) {
 									echo "<option selected='true' value=".$row["id"].">".$row["title"]."</option>";
 								} else {
 									echo "<option value=".$row["id"].">".$row["title"]."</option>";
@@ -120,8 +119,8 @@ if (isset($_POST["Submit"])) {
 		$titleErr = "Title is required for an article";
 	} else {
 		$title = clean_input($_POST["title"]);
-		if (!preg_match("/^[a-zA-Z0-9 ]*$/",$title)) {
-			$titleErr = "Only letters, numbers and white space allowed in the title";
+		if (!preg_match("/^[a-zA-Z0-9 \?\!]*$/",$title)) {
+			$titleErr = "Only letters, numbers, punctuation, and white space allowed in the title";
 		}
 	}
 	// handle the maintext
@@ -138,8 +137,8 @@ if (isset($_POST["Submit"])) {
 	}
 	// handle the link text
 	$linktext = clean_input($_POST["linktext"]);
-	if (!preg_match("/^[a-zA-Z0-9 ]*$/",$linktext)) {
-		$linkTextErr = "Only letters, numbers and white space allowed in the subtitle";
+	if (!preg_match("/^[a-zA-Z0-9 \?\!]*$/",$linktext)) {
+		$linkTextErr = "Only letters, numbers, punctuation, and white space allowed in the subtitle";
 	}
 	error_log("-----------------submitted form--------------------");
 	if ($parenterr == "" and $titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
