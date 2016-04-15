@@ -35,39 +35,6 @@
 	mysqli_close($con);
   }
   
-  
-if ($_SERVER["Submit"] == "POST") {
-	// handle the title
-	if (empty($_POST["title"])) {
-		$titleErr = "Title is required for an article";
-	} else {
-		$title = clean_input($_POST["title"]);
-		if (!preg_match("/^[a-zA-Z0-9 ]*$/",$title)) {
-			$titleErr = "Only letters, numbers and white space allowed in the title";
-		}
-	}
-	
-	// handle the maintext
-	$text = clean_input($_POST["text"]);
-	if (preg_match("[^\w\.@-]", $text)) {
-		$textErr = "Invalid characters included in text block.  Allowed characters are \n";
-		$textErr = $textErr . "periods, @ symbol, underscore, or hyphen.";
-	}
-	
-	// handle the detail text
-	$detailtext = clean_input($_POST["detailtext"]);
-	if (preg_match("[^\w\.@-]", $detailtext)) {
-		$textDetErr = "Invalid characters included in detail text block.  Allowed characters\n";
-		$textDetErr = $textDetErr . "are periods, @ symbol, underscore, or hyphen.";
-	}
-	
-	// handle the link text
-	$linktext = clean_input($_POST["linktext"]);
-	if (!preg_match("/^[a-zA-Z0-9 ]*$/",$linktext)) {
-		$linkTextErr = "Only letters, numbers and white space allowed in the subtitle";
-	}
-}  
-  
 function clean_input($data) {
 	$data = trim($data);
 	$data = stripslashes($data);
@@ -131,18 +98,44 @@ function clean_input($data) {
 
 <?php
 if (isset($_POST["Submit"])) {
+	// test for errors in the fields
+	// handle the title
+	if (empty($_POST["title"])) {
+		$titleErr = "Title is required for an article";
+	} else {
+		$title = clean_input($_POST["title"]);
+		if (!preg_match("/^[a-zA-Z0-9 ]*$/",$title)) {
+			$titleErr = "Only letters, numbers and white space allowed in the title";
+		}
+	}
+	// handle the maintext
+	$text = clean_input($_POST["text"]);
+	if (preg_match("[^\w\.@-]", $text)) {
+		$textErr = "Invalid characters included in text block.  Allowed characters are \n";
+		$textErr = $textErr . "periods, @ symbol, underscore, or hyphen.";
+	}
+	// handle the detail text
+	$detailtext = clean_input($_POST["detailtext"]);
+	if (preg_match("[^\w\.@-]", $detailtext)) {
+		$textDetErr = "Invalid characters included in detail text block.  Allowed characters\n";
+		$textDetErr = $textDetErr . "are periods, @ symbol, underscore, or hyphen.";
+	}
+	// handle the link text
+	$linktext = clean_input($_POST["linktext"]);
+	if (!preg_match("/^[a-zA-Z0-9 ]*$/",$linktext)) {
+		$linkTextErr = "Only letters, numbers and white space allowed in the subtitle";
+	}
 	error_log("-----------------submitted form--------------------");
 	if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
 		echo "All clear";
+	} else {
+		echo $titleErr;
+		echo $textErr;
+		echo $textDetErr;
+		echo $linktextErr;
 	}
-	echo $titleErr;
-	echo $textErr;
-	echo $textDetErr;
-	echo $linktextErr;
 }
 ?>
-
-
 <style>
 
 </style>
