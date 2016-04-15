@@ -29,6 +29,7 @@
 		$row = mysqli_fetch_assoc($result);
 		$parent_id = $row['parent_id'];
 		$title = $row['title'];
+		$_POST['title'] = $title;
 		$text = $row['text'];
 		$detailtext = $row['detail'];
 		$linktext = $row['link_text'];
