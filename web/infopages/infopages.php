@@ -14,7 +14,7 @@
   // empty variable holders
   $parent_id = 0;
   $title    = $text    = $detailtext = $linktext   = "";
-  $titleErr = $textErr = $textDetErr = $linkTextErr = parenterr = "";
+  $titleErr = $textErr = $textDetErr = $linkTextErr = $parenterr = "";
 
   //populate the parent page selector
   if (empty($_GET['pageselector'])) {
