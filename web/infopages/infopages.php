@@ -74,12 +74,12 @@ function clean_input($data) {
 		<br>
 		<div class="LabelColumn">Title: *</div>
 		<div class="InputColumn">
-			<input type="text" name="title" value="<?php echo $title;?>"></input>
+			<input type="text" name="title" value="<?php echo $_POST["title"];?>"></input>
 		</div> 
 		<br>
 		<div class="LabelColumn">Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" name="text"><?php echo $text;?></textarea>
+			<textarea rows="5" cols="50" name="text"><?php echo $_POST["text"];?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Detail Text:</div>
