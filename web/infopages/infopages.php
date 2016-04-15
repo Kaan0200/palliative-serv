@@ -80,7 +80,7 @@ function clean_input($data) {
 <h2>Use this page to edit, add, or delete pages that already exist in the application.</h2>
 <hr>
 <p><span class="error">* required field.</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+<form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>"> 
 <div>
 	<div>
 		<div class="LabelColumn">Parent Page: *</div>
@@ -131,6 +131,7 @@ function clean_input($data) {
 
 <?php
 if ($_SERVER["Submit"] == "POST") {
+	error_log("-----------------submitted form--------------------");
 	if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
 		echo "All clear";
 	}
