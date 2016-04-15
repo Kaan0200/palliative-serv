@@ -27,12 +27,18 @@
 	// peel off results from query
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
-		$parent_id = $row['parent_id'];
-		$title = $row['title'];
-		$_POST['title'] = $title;
-		$text = $row['text'];
+		// store the values from the query
+		$parent_id  = $row['parent_id'];
+		$title      = $row['title'];
+		$text       = $row['text'];
 		$detailtext = $row['detail'];
-		$linktext = $row['link_text'];
+		$linktext   = $row['link_text'];
+		// push the variables into the post, so we can retreive it
+		$_POST['title']     = $title;
+		$_POST['text']      = $text;
+		$_POST['detail']    = $detailtext;
+		$_POST['link_text'] = $linktext;
+		error_log(isset($_POST['Submit']));
 	}
 	mysqli_close($con);
   }
