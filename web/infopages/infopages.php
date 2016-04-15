@@ -85,22 +85,22 @@ function clean_input($data) {
 		<br>
 		<div class="LabelColumn">Title: *</div>
 		<div class="InputColumn">
-			<input type="text" name="title" value="<?php echo $_POST["title"];?>"></input>
+			<input type="text" name="title" style="width:100%" value="<?php echo $_POST["title"];?>"></input>
 		</div> 
 		<br>
 		<div class="LabelColumn">Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" name="text"><?php echo $_POST["text"];?></textarea>
+			<textarea rows="5" cols="50" style="width:100%" name="text"><?php echo $_POST["text"];?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Detail Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" name="detailtext"><?php echo $_POST["detailtext"];?></textarea>
+			<textarea rows="5" cols="50" style="width:100%" name="detailtext"><?php echo $_POST["detailtext"];?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Link Text:</div>
 		<div class="InputColumn">
-			<input type="text" name="linktext" value="<?php echo $_POST["linktext"];?>"></input>
+			<input type="text" name="linktext" style="width:100%" value="<?php echo $_POST["linktext"];?>"></input>
 		</div>
 	</div>
 </div>
@@ -142,7 +142,10 @@ if (isset($_POST["Submit"])) {
 	}
 	error_log("-----------------submitted form--------------------");
 	if ($parenterr == "" and $titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
-		echo "All clear";
+		// handle form submission
+		$con = get_connection();
+		$query = "";
+		mysqli_close($con);
 	} else {
 		echo $parenterr;
 		echo $titleErr;
