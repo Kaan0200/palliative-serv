@@ -70,3 +70,10 @@
 </div>
 <input type="submit" name="Submit" value="Submit">
 </form>
+</body>
+<footer>
+<?php
+  include '../views/footer.html';
+?>
+</footer>
+</html>
