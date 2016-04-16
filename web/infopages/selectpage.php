@@ -29,7 +29,7 @@
 				if ($row["id"] != 1) {
 					echo "<tr>";
 					echo "<td>".$row['title']."</td>";
-					echo "<td><div class=\"squircleButton_left\">Select Parent</div></td>"
+					echo "<td><div class=\"squircleButton_left\">Select Parent</div></td>";
 					echo "</tr>";
 				}
 			}
