@@ -17,11 +17,11 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 		</div>
 		<div class="rightColumn">
 			<a href="infopages/selectpage.php?new=1">
-				<div class="squircleButton_right">New Page</div>
+				<div class="squircleButton_right">Create New Page</div>
 			</a>
 			<div style="height:40px"> </div>
 			<a href="infopages/selectpage.php?new=0">
-				<div class="squircleButton_right">Alter Page</div>
+				<div class="squircleButton_right">Modify Existing Page</div>
 			</a>
 		</div>
 	</div>
