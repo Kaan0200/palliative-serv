@@ -11,9 +11,11 @@
 </head>
 <body>
 <?php
-  if ($_GET['new'] == 1) {
+  $newpage = $_GET['new'];
+
+  if ($newpage == 1) {
 	  echo "<h2>Select the parent page for this new info page.</h2>";
-  } else if ($_GET['new'] == 0) {
+  } else if ($newpage == 0) {
 	  echo "<h2>Select the info page you want to modify.</h2>";
   } else {
 	  echo "<h2 style=\"color:red\">There was an error, please return to the menu and try again.</h2>";
@@ -28,7 +30,7 @@
 		// this is the important query
 		$result = mysqli_query($con, "SELECT id, title FROM pages") or die(mysqli_error($con));
 					
-		printf("There are %d pages.\n\n", mysqli_num_rows($result));
+		printf("<p style=\"color: green\">There are %d pages.</p>\n\n", mysqli_num_rows($result));
 					
 		if ($result->num_rows > 0){
 			while ($row = mysqli_fetch_assoc($result)) {
@@ -37,7 +39,11 @@
 				if ($row["id"] != 1) {
 					echo "<tr>";
 					echo "<td>".$row['title']."</td>";
-					echo "<td><div class=\"squircleButton_left\">Select Parent</div></td>";
+					if ($newpage == 1) {
+						echo "<td><div class=\"squircleButton_right\">Select Parent</div></td>";
+					} else if ($newpage == 0) {
+						echo "<td><div class=\"squircleButton_right\">Select Page</div></td>";
+					}
 					echo "</tr>";
 				}
 			}
