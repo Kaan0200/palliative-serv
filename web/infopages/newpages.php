@@ -23,6 +23,8 @@
 		$data = htmlspecialchars($data);
 		return $data;
 	}
+	// get value
+	$parent_id = $_GET['id'];
   
 ?>
 <h2>Use this page to add new pages to the application.</h2>
@@ -34,7 +36,10 @@
 		<div class="LabelColumn">Parent Page: *</div>
 		<div class="InputColumn">
 			<?php
-				
+				$con = get_connection();
+				// query
+				$result = mysqli_query($con, "SELECT title FROM pages WHERE id = ".$parent_id)
+				mysqli_close($con);
 			?>
 		</div>
 		<br>
