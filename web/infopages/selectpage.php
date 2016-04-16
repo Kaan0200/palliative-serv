@@ -40,9 +40,9 @@
 					echo "<tr>";
 					echo "<td>".$row['title']."</td>";
 					if ($newpage == 1) {
-						echo "<td><div class=\"squircleButton_right\">Select Parent</div></td>";
+						echo "<td><a href=\"newpages.php?id=".$row["id"]."\"><div class=\"squircleButton_right\">Select Parent</div></a></td>";
 					} else if ($newpage == 0) {
-						echo "<td><div class=\"squircleButton_right\">Select Page</div></td>";
+						echo "<td><a href=\"modifypages.php?id=".$row["id"]."\"><div class=\"squircleButton_right\">Select Page</div></a></td>";
 					}
 					echo "</tr>";
 				}

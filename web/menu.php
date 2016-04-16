@@ -19,6 +19,8 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 			<a href="infopages/selectpage.php?new=1">
 				<div class="squircleButton_right">New Page</div>
 			</a>
+		</div>
+		<div class="leftColumn">
 			<a href="infopages/selectpage.php?new=0">
 				<div class="squircleButton_right">Alter Page</div>
 			</a>
@@ -26,22 +28,12 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 	</div>
 	<div class="mainColumn">
 		<div class="leftColumn"> 
-			<a href="quizzing/quizzes.php">
-				<div class="squircleButton_left">Quizzing System</div>
-			</a>
-		</div>
-		<div class="rightColumn">
-			<p> Access the quizzing system to remove modify the applications quizzes and questions.</p>
-		</div>
-	</div>
-	<div class="mainColumn">
-		<div class="leftColumn"> 
-			<p> View the database tables relating to application usage and what type of users use the application. </p>
-		</div>
-		<div class="rightColumn">
 			<a href="analytics/analyze.php">
 				<div class="squircleButton_right">Application Analytics</div>
 			</a>
+		</div>
+		<div class="rightColumn">
+			<p> View the database tables relating to application usage and what type of users use the application. </p>
 		</div>
 	</div>
 	<div class="mainColumn">
