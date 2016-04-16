@@ -14,37 +14,29 @@
 <hr>
 
 <div>
-	<div>
-		<form name="selectform" action="infopages.php" class="centerform" method="GET">
-			<div class="centered">
+	<table>
+	  <?php
+	    $con = get_connection();
+		// this is the important query
+		$result = mysqli_query($con, "SELECT id, title FROM pages") or die(mysqli_error($con));
+					
+		printf("selected returned %d rows.\n", mysqli_num_rows($result));
+					
+		if ($result->num_rows > 0){
+			while ($row = mysqli_fetch_assoc($result)) {
+				// replace the 'a' and 'b' with the column names
 				
-			</div>
-			<div class="centered">
-				<select name="pageselector" style="max-width:400px">
-				<option value="-1">New Page</option>
-				<?php
-					$con = get_connection();
-					// this is the important query
-					$result = mysqli_query($con, "SELECT id, title FROM pages") or die(mysqli_error($con));
-					
-					printf("selected returned %d rows.\n", mysqli_num_rows($result));
-					
-					if ($result->num_rows > 0){
-						while ($row = mysqli_fetch_assoc($result)) {
-							// replace the 'a' and 'b' with the column names
-							if ($row["id"] != 1) {
-								echo "<option value=".$row["id"].">".$row["title"]."</option>";
-							}
-						}
-					} 
-					
-					mysqli_close($con);
-				?>
-				</select>
-			</div>
-			<input type="submit" value="Select">
-		</form>
-	</div>
+				if ($row["id"] != 1) {
+					echo "<tr>";
+					echo "<td>".$row['title']."</td>";
+					echo "<td><div class=\"squircleButton_left\">Select Parent</div></td>"
+					echo "</tr>";
+				}
+			}
+		} 
+		mysqli_close($con);
+	  ?>
+	</table>
 </div>
 
 <style>

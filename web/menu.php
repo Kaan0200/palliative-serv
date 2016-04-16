@@ -11,12 +11,16 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 
 	<div class="mainColumn">
 		<div class="leftColumn">
+			<h3>Informational Heirachy</h3>
 			<p>Use this to access the informational page system. Here you can modify pages, add or remove pages, and change
 			the hierarchical structure.</p>
 		</div>
 		<div class="rightColumn">
-			<a href="infopages/selectpage.php">
-				<div class="squircleButton_right">Informational Heirachy</div>
+			<a href="infopages/selectpage.php?new=1">
+				<div class="squircleButton_right">New Page</div>
+			</a>
+			<a href="infopages/selectpage.php?new=0">
+				<div class="squircleButton_right">Alter Page</div>
 			</a>
 		</div>
 	</div>
