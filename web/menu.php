@@ -19,8 +19,7 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 			<a href="infopages/selectpage.php?new=1">
 				<div class="squircleButton_right">New Page</div>
 			</a>
-		</div>
-		<div class="leftColumn">
+			<br/>
 			<a href="infopages/selectpage.php?new=0">
 				<div class="squircleButton_right">Alter Page</div>
 			</a>
