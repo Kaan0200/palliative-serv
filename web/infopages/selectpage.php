@@ -10,7 +10,15 @@
 ?>
 </head>
 <body>
-<h2>Select an existing page to edit or create a new info page.</h2>
+<?php
+  if ($_GET['new'] == 1) {
+	  echo "<h2>Select the parent page for this new info page.</h2>";
+  } else if ($_GET['new'] == 0) {
+	  echo "<h2>Select the info page you want to modify.</h2>";
+  } else {
+	  echo "<h2 style=\"color:red\">There was an error, please return to the menu and try again.</h2>";
+  }
+?>
 <hr>
 
 <div>
@@ -20,7 +28,7 @@
 		// this is the important query
 		$result = mysqli_query($con, "SELECT id, title FROM pages") or die(mysqli_error($con));
 					
-		printf("selected returned %d rows.\n", mysqli_num_rows($result));
+		printf("There are %d pages.\n\n", mysqli_num_rows($result));
 					
 		if ($result->num_rows > 0){
 			while ($row = mysqli_fetch_assoc($result)) {
