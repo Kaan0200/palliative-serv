@@ -69,6 +69,52 @@
 	</div>
 </div>
 <input type="submit" name="Submit" value="Submit">
+<?php
+	if (isset($_POST['Submit'])) {
+	// handle the title
+	if (empty($_POST["title"])) {
+		$titleErr = "Title is required for an article";
+	} else {
+		$title = clean_input($_POST["title"]);
+		if (!preg_match("/^[a-zA-Z0-9 \?\!]*$/",$title)) {
+			$titleErr = "Only letters, numbers, punctuation, and white space allowed in the title";
+		}
+	}
+	// handle the maintext
+	$text = clean_input($_POST["text"]);
+	if (preg_match("[^\w\.@-]", $text)) {
+		$textErr = "Invalid characters included in text block.  Allowed characters are \n";
+		$textErr = $textErr . "periods, @ symbol, underscore, or hyphen.";
+	}
+	// handle the detail text
+	$detailtext = clean_input($_POST["detailtext"]);
+	if (preg_match("[^\w\.@-]", $detailtext)) {
+		$textDetErr = "Invalid characters included in detail text block.  Allowed characters\n";
+		$textDetErr = $textDetErr . "are periods, @ symbol, underscore, or hyphen.";
+	}
+	// handle the link text
+	$linktext = clean_input($_POST["linktext"]);
+	if (!preg_match("/^[a-zA-Z0-9 \?\!]*$/",$linktext)) {
+		$linkTextErr = "Only letters, numbers, punctuation, and white space allowed in the subtitle";
+	}
+	error_log("-----------------submitted form--------------------");
+	if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
+		// handle form submission
+		$con = get_connection();
+		$query = "INSERT INTO pages (id, parent_id, title, text, detail, link_text) VALUES";
+		$query = $query."(".mysqli_insert_id().",".$parent_id.", \"".$title."\", \"".$text."\",\"".$detailtext."\", \"".$linktext."\");";
+		error_log("-------".$query."-------")
+		$result = mysqli_query($con, $query);
+		mysqli_close($con);
+	} else {
+		echo $parenterr;
+		echo $titleErr;
+		echo $textErr;
+		echo $textDetErr;
+		echo $linktextErr;
+	}
+	}
+?>
 </form>
 </body>
 <footer>
