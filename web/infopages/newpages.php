@@ -38,7 +38,7 @@
 			<?php
 				$con = get_connection();
 				// query
-				$result = mysqli_query($con, "SELECT title FROM pages WHERE id = ".$parent_id)
+				$result = mysqli_query($con, "SELECT title FROM pages WHERE id = ".$parent_id);
 				mysqli_close($con);
 			?>
 		</div>
