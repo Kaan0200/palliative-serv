@@ -19,7 +19,7 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 			<a href="infopages/selectpage.php?new=1">
 				<div class="squircleButton_right">New Page</div>
 			</a>
-			<br/>
+			<div style="height:40px"> </div>
 			<a href="infopages/selectpage.php?new=0">
 				<div class="squircleButton_right">Alter Page</div>
 			</a>
@@ -28,7 +28,7 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 	<div class="mainColumn">
 		<div class="leftColumn"> 
 			<a href="analytics/analyze.php">
-				<div class="squircleButton_right">Application Analytics</div>
+				<div class="squircleButton_left">Application Analytics</div>
 			</a>
 		</div>
 		<div class="rightColumn">
@@ -37,12 +37,13 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 	</div>
 	<div class="mainColumn">
 		<div class="leftColumn"> 
-			<a href="settings/settings.php">
-				<div class="squircleButton_left">Admin Settings</div>
-			</a>
+			<p> Modify settings for the online portal, including login information and user name info. </p>
 		</div>
 		<div class="rightColumn">
-			<p> Modify settings for the online portal, including login information and user name info. </p>
+			<a href="settings/settings.php">
+				<div class="squircleButton_right">Admin Settings</div>
+			</a>
+
 		</div>
 	</div>
 </body>
