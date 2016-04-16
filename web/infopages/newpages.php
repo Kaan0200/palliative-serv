@@ -33,12 +33,16 @@
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>"> 
 <div>
 	<div>
-		<div class="LabelColumn">Parent Page: *</div>
+		<div class="LabelColumn">Parent Page:</div>
 		<div class="InputColumn">
 			<?php
 				$con = get_connection();
-				// query
 				$result = mysqli_query($con, "SELECT title FROM pages WHERE id = ".$parent_id);
+				if ($result->num_rows > 0) {
+					while($row = mysqli_fetch_assoc($result)) {
+						echo $row['title'];
+					}
+				}
 				mysqli_close($con);
 			?>
 		</div>

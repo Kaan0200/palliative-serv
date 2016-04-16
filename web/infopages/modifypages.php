@@ -54,16 +54,25 @@ $page_id = $_GET['id'];
 <div>
 	<div>
 		<div class="LabelColumn">Parent Page: </div>
-		<div class="InputColumn">
-			<?php
-				$con = get_connection();
-				$result = mysqli_query($con, "SELECT title FROM pages WHERE id = ".$parent_id);
-				if ($result->num_rows > 0) {
-					while($row = mysqli_fetch_assoc($result)) {
-						echo $row['title'];
-					}
-				}
-			?>
+			<select name="parentselect" style="max-width:400px">
+				<?php 
+					$con = get_connection();
+					$result = mysqli_query($con, "SELECT id, title FROM pages") or die(mysqli_error($con));
+					
+					if ($result->num_rows > 0){
+						while ($row = mysqli_fetch_assoc($result)) {
+							if ($row["id"] != 1) {
+								if ($row["id"] == $_POST["parent_id"]) {
+									echo "<option selected='true' value=".$row["id"].">".$row["title"]."</option>";
+								} else {
+									echo "<option value=".$row["id"].">".$row["title"]."</option>";
+								}
+							}
+						}
+					} 
+					mysqli_close($con);
+				?>
+			</select>
 		</div>
 		<br>
 		<div class="LabelColumn">Title: *</div>
