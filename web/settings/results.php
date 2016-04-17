@@ -19,12 +19,12 @@
 		if (empty($new_name)) {
 			$errText = "Username cannot be empty. \n";
 		}
-		if (!preg_match("[a-zA-Z0-9]", $new_name)){
+		if (!preg_match("^[a-zA-Z0-9]*", $new_name)){
 			$errText = $errText."Username must be alphanumeric. \n";
 		}
 		//check that we are doing password1
 		if (!empty($pass1)){
-			if (!preg_match("[a-zA-Z0-9]",$pass1)){
+			if (!preg_match("^[a-zA-Z0-9]*",$pass1)){
 				$errText = $errText."Password must be alphanumeric. \n";
 			}
 			if (!strcmp($pass1, $pass2)){
