@@ -103,7 +103,7 @@
 		$con = get_connection();
 		error_log("-------".$query."-------");
 		
-		mysqli_query($con, "CALL Insert_Page(".$parent_id.",\"".$title.\"", \"".$text."\", \"".$detailtext."\", \"".$linktext."\");");
+		mysqli_query($con, "CALL Insert_Page(".$parent_id.",\"".$title."\", \"".$text."\", \"".$detailtext."\", \"".$linktext."\");");
 		mysqli_close($con);
 	} else {
 		echo $parenterr;
