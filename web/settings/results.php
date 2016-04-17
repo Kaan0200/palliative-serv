@@ -43,6 +43,7 @@
 				mysqli_query($con, "UPDATE settings SET value =\"".$pass1."\" WHERE id = 1");
 				echo "<h3 style=\"color:green\">Changed Password</h3>";
 			}
+			mysqli_close($con);
 		} else {
 			echo "<h3 style=\"color:red\">".$errText."</h3>";
 		}
