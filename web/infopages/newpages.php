@@ -101,9 +101,9 @@
 	if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
 		// handle form submission
 		$con = get_connection();
-		error_log("-------".$query."-------");
-		
-		mysqli_query($con, "CALL Insert_Page(".$parent_id.",\"".$title."\", \"".$text."\", \"".$detailtext."\", \"".$linktext."\");");
+		$sql = "CALL Insert_Page(".$parent_id.",\"".$title."\", \"".$text."\", \"".$detailtext."\", \"".$linktext."\");";
+		error_log("-----".$sql."-----");
+		mysqli_query($con, $sql);
 		mysqli_close($con);
 	} else {
 		echo $parenterr;
