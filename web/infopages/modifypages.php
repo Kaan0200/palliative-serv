@@ -94,7 +94,7 @@ if (isset($_POST['Submit'])) {
 	}
   
 ?>
-<h2>Use this page to add new pages to the application.</h2>
+<h2>Use this page to modify pages in application.</h2>
 <hr>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]."?id=".$page_id;?>"> 
