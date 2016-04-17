@@ -38,7 +38,7 @@
 	}
 	mysqli_close($con);
     
-	if (isset($_POST['Submit'])) {
+if (isset($_POST['Submit'])) {
 	// handle the title
 	if (empty($_POST["title"])) {
 		$titleErr = "Title is required for an article";
@@ -83,6 +83,7 @@
 		echo $textDetErr;
 		echo $linktextErr;
 	}
+}
     
 	function clean_input($data) {
 		$data = trim($data);
