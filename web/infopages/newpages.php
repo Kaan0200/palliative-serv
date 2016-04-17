@@ -63,7 +63,7 @@ if (isset($_POST['Submit'])) {
 		error_log("-----".$sql."-----");
 		mysqli_query($con, $sql);
 		mysqli_close($con);
-		echo "<h3 style=\"color:green\">Page successfully submitted!</h3>"
+		echo "<h3 style=\"color:green\">Page successfully submitted!</h3>";
 	} else {
 		echo $parenterr;
 		echo $titleErr;
