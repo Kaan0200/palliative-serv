@@ -31,7 +31,7 @@
 <h2>Use this page to add new pages to the application.</h2>
 <hr>
 <p><span class="error">* required field.</span></p>
-<form method="post" action="<?php echo $_SERVER["PHP_SELF"]."id=".$parent_id;?>"> 
+<form method="post" action="<?php echo $_SERVER["PHP_SELF"]."?id=".$parent_id;?>"> 
 <div>
 	<div>
 		<div class="LabelColumn">Parent Page:</div>
