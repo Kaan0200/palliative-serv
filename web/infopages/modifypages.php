@@ -19,6 +19,28 @@
 	// grab the id 
 	$page_id = $_GET['id'];
     
+	$con = get_connection();
+	$result = mysqli_query($con, "SELECT parent_id, title, text, detail, link_text FROM pages WHERE id = ".$page_id) or die(mysqli_error($con));
+	// peel off results from query
+	if ($result->num_rows > 0) {
+		$row = mysqli_fetch_assoc($result);
+		// store the values from the query
+		$parent_id  = $row['parent_id'];
+		$title      = $row['title'];
+		$text       = $row['text'];
+		$detailtext = $row['detail'];
+		$linktext   = $row['link_text'];
+		// push the variables into the post, so we can retreive it
+		//$_POST['parent_id'] = $parent_id;
+		//$_POST['title']     = $title;
+		//$_POST['text']      = $text;
+		//$_POST['detail']    = $detailtext;
+		//$_POST['link_text'] = $linktext;
+	}
+	mysqli_close($con);
+		
+	
+	
 if (isset($_POST['Submit'])) {
 	// handle the title
 	if (empty($_POST["title"])) {
@@ -66,26 +88,7 @@ if (isset($_POST['Submit'])) {
 	}
 }
     
-	$con = get_connection();
-	$result = mysqli_query($con, "SELECT parent_id, title, text, detail, link_text FROM pages WHERE id = ".$page_id) or die(mysqli_error($con));
-	// peel off results from query
-	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result);
-		// store the values from the query
-		$parent_id  = $row['parent_id'];
-		$title      = $row['title'];
-		$text       = $row['text'];
-		$detailtext = $row['detail'];
-		$linktext   = $row['link_text'];
-		// push the variables into the post, so we can retreive it
-		$_POST['parent_id'] = $parent_id;
-		$_POST['title']     = $title;
-		$_POST['text']      = $text;
-		$_POST['detail']    = $detailtext;
-		$_POST['link_text'] = $linktext;
-	}
-	mysqli_close($con);
-	
+
 	function clean_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
@@ -109,7 +112,7 @@ if (isset($_POST['Submit'])) {
 					if ($result->num_rows > 0){
 						while ($row = mysqli_fetch_assoc($result)) {
 							if ($row["id"] != 1) {
-								if ($row["id"] == $_POST["parent_id"]) {
+								if ($row["id"] == $parent_id) {
 									echo "<option selected='true' value=".$row["id"].">".$row["title"]."</option>";
 								} else {
 									echo "<option value=".$row["id"].">".$row["title"]."</option>";
@@ -124,22 +127,22 @@ if (isset($_POST['Submit'])) {
 		<br>
 		<div class="LabelColumn">Title: *</div>
 		<div class="InputColumn">
-			<input type="text" name="title" style="width:100%" value="<?php echo $_POST["title"];?>"></input>
+			<input type="text" name="title" style="width:100%" value="<?php echo $title;?>"></input>
 		</div> 
 		<br>
 		<div class="LabelColumn">Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" style="width:100%" name="text"><?php echo $_POST["text"];?></textarea>
+			<textarea rows="5" cols="50" style="width:100%" name="text"><?php echo $text;?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Detail Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" style="width:100%" name="detailtext"><?php echo $_POST["detail"];?></textarea>
+			<textarea rows="5" cols="50" style="width:100%" name="detailtext"><?php echo $detailtext;?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Link Text:</div>
 		<div class="InputColumn">
-			<input type="text" name="linktext" style="width:100%" value="<?php echo $_POST["linktext"];?>"></input>
+			<input type="text" name="linktext" style="width:100%" value="<?php echo $linktext;?>"></input>
 		</div>
 	</div>
 </div>
