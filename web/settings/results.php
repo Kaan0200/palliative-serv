@@ -27,7 +27,7 @@
 			if (!preg_match("/^[a-zA-Z0-9]*/",$pass1)){
 				$errText = $errText."Password must be alphanumeric. \n";
 			}
-			if (!strcmp($pass1, $pass2)){
+			if ($pass1 != $pass2){
 				$errText = $errText."Passwords are not the same. \n";
 			}
 		}
