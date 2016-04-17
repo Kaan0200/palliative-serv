@@ -101,7 +101,7 @@ if (isset($_POST['Submit'])) {
 <div>
 	<div>
 		<div class="LabelColumn">Parent Page: </div>
-			<select name="parentselect" style="max-width:400px">
+			<select name="parent_id" style="max-width:400px">
 				<?php 
 					$con = get_connection();
 					$result = mysqli_query($con, "SELECT id, title FROM pages") or die(mysqli_error($con));
