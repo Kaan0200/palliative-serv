@@ -69,6 +69,7 @@ if (isset($_POST['Submit'])) {
 		$linkTextErr = "Only letters, numbers, punctuation, and white space allowed in the subtitle";
 	}
 	
+	$parent_id = $_POST['parent_id'];
 	
 	error_log("-----------------submitted form--------------------");
 	if ($titleErr == "" and $textErr == "" and $textDetErr == "" and $linktextErr == "") {
