@@ -36,7 +36,7 @@ if (isset($_POST['Submit'])) {
 		$textErr = $textErr . "periods, @ symbol, underscore, or hyphen.";
 	}
 	// handle the detail text
-	$detailtext = clean_input($_POST["detailtext"]);
+	$detailtext = clean_input($_POST["detail"]);
 	if (preg_match("[^\w\.@-]", $detailtext)) {
 		$textDetErr = "Invalid characters included in detail text block.  Allowed characters\n";
 		$textDetErr = $textDetErr . "are periods, @ symbol, underscore, or hyphen.";
@@ -134,7 +134,7 @@ if (isset($_POST['Submit'])) {
 		<br>
 		<div class="LabelColumn">Detail Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" style="width:100%" name="detailtext"><?php echo $_POST["detailtext"];?></textarea>
+			<textarea rows="5" cols="50" style="width:100%" name="detailtext"><?php echo $_POST["detail"];?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Link Text:</div>
