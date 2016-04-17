@@ -11,13 +11,13 @@
 <body>
 <?php
 
-  // empty variable holders
-  $parent_id = 0;
-  $title    = $text    = $detailtext = $linktext   = "";
-  $titleErr = $textErr = $textDetErr = $linkTextErr = $parenterr = "";
+	// empty variable holders
+	$parent_id = 0;
+	$title    = $text    = $detailtext = $linktext   = "";
+	$titleErr = $textErr = $textDetErr = $linkTextErr = $parenterr = "";
   
-  // grab the id 
-$page_id = $_GET['id'];
+	// grab the id 
+	$page_id = $_GET['id'];
 	$con = get_connection();
 	$result = mysqli_query($con, "SELECT parent_id, title, text, detail, link_text FROM pages WHERE id = ".$page_id) or die(mysqli_error($con));
 	// peel off results from query
