@@ -11,7 +11,7 @@
 	// create empty array
 	$updates = array();
 	while ($row = mysqli_fetch_assoc($result)) {
-		$updates[] = $row
+		$updates[] = $row;
 	}
 	
 	echo json_encode($updates);
