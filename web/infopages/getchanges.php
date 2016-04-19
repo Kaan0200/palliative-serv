@@ -9,9 +9,14 @@
 	$result = mysqli_query($con, $query);
 	
 	// create empty array
-	$updates = array();
+	$data = array();
 	while ($row = mysqli_fetch_assoc($result)) {
-		$updates[] = $row;
+		$data = array(
+			'id'        => $row['id'],
+			'type'      => $row['type'],
+			'statement' => $row['statement']
+		);
+		}
 	}
 	
 	echo json_encode($updates);
