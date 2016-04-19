@@ -16,7 +16,6 @@
 			'type'      => $row['type'],
 			'statement' => $row['statement']
 		);
-		}
 	}
 	
 	echo json_encode($updates);
