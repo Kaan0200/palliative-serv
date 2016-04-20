@@ -25,6 +25,7 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 			</a>
 		</div>
 	</div>
+	<hr>
 	<div class="mainColumn">
 		<div class="leftColumn"> 
 			<a href="analytics/analyze.php">
@@ -35,6 +36,7 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 			<p> View the database tables relating to application usage and what type of users use the application. </p>
 		</div>
 	</div>
+	<hr>
 	<div class="mainColumn">
 		<div class="leftColumn"> 
 			<p> Modify settings for the online portal, including login information and user name info. </p>
