@@ -5,7 +5,7 @@
 	$mobile_version = $_GET['v'];
 
 	$con   = get_connection();
-	$query = "SELECT id, type, statement FROM updates WHERE id >= ".$mobile_version;
+	$query = "SELECT id, statement FROM updates WHERE id > ".$mobile_version;
 	$result = mysqli_query($con, $query);
 	
 	// create empty array
