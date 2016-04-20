@@ -20,7 +20,7 @@
 	} else if ($_GET['view'] == 3) {
 		echo "selected view 3";
 	} else {
-	  	echo "<h3>Select a type of analysis<h3>";
+	  	echo "<h3>Select a type of analysis</h3>";
 	}
 ?>
 <div style="text-align:center; margin:10px;">
