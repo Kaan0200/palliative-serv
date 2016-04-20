@@ -28,8 +28,8 @@
 	error_log("QUERY: ".$query);
 	mysqli_query($con, $query);
 	
-	foreach($data['page_hits'] as $hit ) {
-		$query = "Add_Hits(\"".$data['credentials']['device']."\", ".$data['page_hits'].", ".$hit.");";
+	foreach($data['page_hits'] as $key => $hit) {
+		$query = "Add_Hits(\"".$data['credentials']['device']."\", ".$key.", ".$hit.");";
 		error_log("QUERY: ".$query);
 		//mysqli_query($con, $query);
 	}
