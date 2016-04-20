@@ -17,8 +17,10 @@
 		echo "selected view 1";
 	} else if ($_GET['view'] == 2) {
 		echo "selected view 2";
+	} else if ($_GET['view'] == 3) {
+		echo "selected view 3";
 	} else {
-	  	echo "Select a type of analysis";
+	  	echo "<h3>Select a type of analysis<h3>";
 	}
 ?>
 <div style="text-align:center; margin:10px;">
