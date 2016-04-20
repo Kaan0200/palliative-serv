@@ -128,7 +128,7 @@ if (isset($_POST['Submit'])) {
 		<br>
 		<div class="LabelColumn">Title: *</div>
 		<div class="InputColumn">
-			<input type="text" name="title" style="width:100%" value="<?php echo $title;?>"></input>
+			<input type="text" name="title" autocomplete="off" style="width:100%" value="<?php echo $title;?>"></input>
 		</div> 
 		<br>
 		<div class="LabelColumn">Text:</div>
@@ -143,7 +143,7 @@ if (isset($_POST['Submit'])) {
 		<br>
 		<div class="LabelColumn">Link Text:</div>
 		<div class="InputColumn">
-			<input type="text" name="linktext" style="width:100%" value="<?php echo $linktext;?>"></input>
+			<input type="text" name="linktext" autocomplete="off" style="width:100%" value="<?php echo $linktext;?>"></input>
 		</div>
 	</div>
 </div>
