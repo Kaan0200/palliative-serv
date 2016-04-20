@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php 
-	sql_connection();
+	get_connection();
   
 	if ($_GET['view'] == 1) {
 		echo "selected view 1";
