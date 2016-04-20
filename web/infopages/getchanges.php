@@ -10,12 +10,8 @@
 	
 	// create empty array
 	$data = array();
-	while ($row = mysqli_fetch_assoc($result)) {
-		$data = array(
-			'id'        => $row['id'],
-			'type'      => $row['type'],
-			'statement' => $row['statement']
-		);
+	while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+		array_push($updates, $row);
 	}
 	
 	echo json_encode($updates);
