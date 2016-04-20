@@ -21,7 +21,7 @@
 	  	echo "Select a type of analysis";
 	}
 ?>
-<div>
+<div style="text-align:center; margin:10px;">
 	<div class="squircleButton">Top Used Pages</div>
 	<div class="squircleButton">Pages by Certification</div>
 	<div class="squircleButton">User Statistics</div>
