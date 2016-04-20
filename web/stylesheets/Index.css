@@ -77,9 +77,11 @@
     padding: 5px;
     float: right;
 	width: 50%;
+	margin: auto;
   }
   .leftColumn {
     padding: 5px;
     float: left;
 	width: 50%;
+	margin: auto;
   }
