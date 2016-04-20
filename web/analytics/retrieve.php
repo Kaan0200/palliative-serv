@@ -1,4 +1,5 @@
 <?php
+	include "../sql_connection.php";
   // use this for ingesting json that will be submitted into the server analytics
   /*  EXAMPLE JSON
   
@@ -17,6 +18,16 @@
   */
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$data = json_decode(file_get_contents("php://input"), TRUE);
-	error_log(var_dump($data['credentials']));
+	error_log("==request method post==");
+	
+	$con   = get_connection();
+	$query = "INSERT INTO app_users (device,  age, postGrad, years, cert, practice) VALUES ";
+	$query = $query."(\"".$data['credentials']['device']."\", ".$data['credentials']['age'].", ".$data['credentials']['postGrad'];
+	$query = $query.", ".$data['credentials']['years'].", \"".$data['credentials']['certification']."\", \"".$data['credentials']['practice']."\");";
+	
+	error_log("QUERY: ".$query);
+	
+	mysqli_query($con, $query);
+	mysqli_close($con);
   }
 ?>
