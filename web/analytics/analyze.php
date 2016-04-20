@@ -14,9 +14,9 @@
 	$con = get_connection();
   
 	if ($_GET['view'] == 1) {
-		echo "This table shows which pages in the application users most often view.";
+		echo "<h3>This table shows which pages in the application users most often view.</h3>";
 		echo "<table border=\"1\">";
-			echo "<tr><td>Page Title</td><td>Hits</td></tr>";
+			echo "<tr><td>Page Title</td><td>Views</td></tr>";
 			$result = mysqli_query($con, "SELECT pages.title, SUM(count) AS c FROM stats JOIN pages WHERE page_id = pages.id GROUP BY page_id;");
 			if ($result->num_rows > 0) {
 				while($row = mysqli_fetch_assoc($result)){
