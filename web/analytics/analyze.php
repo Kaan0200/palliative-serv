@@ -26,10 +26,10 @@
 		echo "</table>";
 	}
 	else if ($_GET['view'] == 2) {
-		echo "<h3>These tables show various collected demographic information regarding who uses the mobile application.</h3>";
+		// not currently used
 	}
 	else if ($_GET['view'] == 3) {
-		echo "selected view 3";
+		echo "<h3>These tables show various collected demographic information regarding who uses the mobile application.</h3>";
 	}
 	else {
 	  	echo "<h3>Select a type of analysis</h3>";
@@ -40,9 +40,9 @@
 	<a style="text-decoration:none;" href="analyze.php?view=1">
 		<div class="squircleButton">Top Used Pages</div>
 	</a>
-	<a style="text-decoration:none;" href="analyze.php?view=2">
+	<!--<a style="text-decoration:none;" href="analyze.php?view=2">
 		<div class="squircleButton">Pages by Certification</div>
-	</a>
+	</a> -->
 	<a style="text-decoration:none;" href="analyze.php?view=3">
 		<div class="squircleButton">User Statistics</div>
 	</a>
