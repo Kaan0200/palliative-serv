@@ -16,9 +16,11 @@
 	if ($_GET['view'] == 1) {
 		echo "selected view 1";
 		echo "<table>";
-			$result = mysqli_query($con, "SELECT pages.title SUM(count) FROM stats JOIN page_id = pages.id GROUP BY page_id");
-			while($row = mysqli_fetch_assoc($result)){
-				echo "<tr><td>".substr($row['title'],0, 30)."</td><td>".$row['count']."</td></tr>";
+			$result = mysqli_query($con, "SELECT pages.title, SUM(count) FROM stats JOIN pages WHERE page_id = pages.id GROUP BY page_id;");
+			if ($result->num_rows > 0) {
+				while($row = mysqli_fetch_assoc($result)){
+					echo "<tr><td>".substr($row['title'],0, 30)."</td><td>".$row['count']."</td></tr>";
+				}
 			}
 		echo "</table>";
 	} else if ($_GET['view'] == 2) {
