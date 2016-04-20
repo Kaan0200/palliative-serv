@@ -39,13 +39,17 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 	<hr>
 	<div class="mainColumn">
 		<div class="leftColumn"> 
-			<p> Modify settings for the online portal, including login information and user name info. </p>
+			<p> Modify settings for the online portal, including login information and password. </p>
+			<p> View information regarding the use of the online portal, and more details on the data storage and
+			interaction with the mobile application</p>
 		</div>
 		<div class="rightColumn">
 			<a href="settings/settings.php">
 				<div class="squircleButton_right">Admin Settings</div>
 			</a>
-
+			<a href="settings/admininfo.php">
+				<div class="squircleButton_right">Administrative Information</div>
+			</a>
 		</div>
 	</div>
 </body>
