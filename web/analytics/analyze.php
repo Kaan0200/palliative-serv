@@ -24,13 +24,13 @@
 	}
 ?>
 <div style="text-align:center; margin:10px;">
-	<a href="analytics/analyze.php?view=1">
+	<a href="analyze.php?view=1">
 		<div class="squircleButton">Top Used Pages</div>
 	</a>
-	<a href="analytics/analyze.php?view=2">
+	<a href="analyze.php?view=2">
 		<div class="squircleButton">Pages by Certification</div>
 	</a>
-	<a href="analytics/analyze.php?view=3">
+	<a href="analyze.php?view=3">
 		<div class="squircleButton">User Statistics</div>
 	</a>
 </div>

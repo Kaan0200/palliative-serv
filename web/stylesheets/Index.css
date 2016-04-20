@@ -58,12 +58,13 @@
 	border-radius: 5px;
 	background-color: #00BCD4;
 	color: white;
-	display: inline-flex;
+	/*display: inline-flex;*/
 	margin: 3px;
   }
   
   .squircleButton_right:hover, 
-  .squircleButton_left:hover  {
+  .squircleButton_left:hover,
+  .squircleButton:hover {
     background-color: purple;
   }
   
