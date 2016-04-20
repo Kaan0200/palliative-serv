@@ -53,6 +53,18 @@
 			</p>
 		</div>
 	</div>
+	<div class="mainColumn">
+		<div class="rightColumn">
+			<h3>Website Technology</h3>
+		</div>
+		<div class="leftColumn">
+			<p>
+			This site is hosted by the Free tier of Heroku platform.  It is a standard PHP website with a MySQL backend.
+			Connection information to the SQL server can be found on the Heroku Dashboard site.  It is registered to 
+			Alan Kaan Atesoglu.
+			</p>
+		</div>
+	</div>
 </body>
 <?php
 	include '../views/footer.html';
