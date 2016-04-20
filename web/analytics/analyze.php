@@ -11,10 +11,16 @@
 </head>
 <body>
 <?php 
-	get_connection();
+	$con = get_connection();
   
 	if ($_GET['view'] == 1) {
 		echo "selected view 1";
+		echo "<table>";
+			$result = mysqli_query($con, "SELECT * FROM stats");
+			while($row = mysqli_fetch_assoc($result)){
+				echo "<tr><td>".$row['page_id']."</td><td>".$row['count']."</td></tr>";
+			}
+		echo "</table>";
 	} else if ($_GET['view'] == 2) {
 		echo "selected view 2";
 	} else if ($_GET['view'] == 3) {
@@ -22,6 +28,7 @@
 	} else {
 	  	echo "<h3>Select a type of analysis</h3>";
 	}
+	mysqli_close($con);
 ?>
 <div style="text-align:center; margin:10px;">
 	<a style="text-decoration:none;" href="analyze.php?view=1">
