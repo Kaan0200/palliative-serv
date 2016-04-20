@@ -21,11 +21,11 @@
 			University in juction with University Hospitals.
 			</p>
 		</div>
+	</div>
+	<div class="mainColumn">
 		<div class="leftColumn">
 			<h3>Mobile App Interaction</h3>
 		</div>
-	</div>
-	<div class="mainColumn">
 		<div class="rightColumn">
 			<p>
 			The webserver has 2 primary interactions with the mobile application.  The first of which
