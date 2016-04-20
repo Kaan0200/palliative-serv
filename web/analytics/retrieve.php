@@ -29,9 +29,9 @@
 	mysqli_query($con, $query);
 	
 	foreach($data['page_hits'] as $hit ) {
-		$query = "Add_Hits(".$data['credentials']['device'].", ".$hit.", ".$hit['page_id']");";
+		$query = "Add_Hits(".$data['credentials']['device'].", ".$hit.", ".$hit['page_id'].");";
 		error_log("QUERY: ".$query);
-		mysqli_query($con, $query);
+		//mysqli_query($con, $query);
 	}
 	
 	mysqli_close($con);
