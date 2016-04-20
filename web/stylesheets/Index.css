@@ -59,7 +59,7 @@
 	background-color: #00BCD4;
 	color: white;
 	display: inline-flex;
-	float: right;
+	margin: 3px;
   }
   
   .squircleButton_right:hover, 
