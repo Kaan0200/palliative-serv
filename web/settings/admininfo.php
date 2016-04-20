@@ -24,6 +24,8 @@
 		<div class="leftColumn">
 			<h3>Mobile App Interaction</h3>
 		</div>
+	</div>
+	<div class="mainColumn">
 		<div class="rightColumn">
 			<p>
 			The webserver has 2 primary interactions with the mobile application.  The first of which
@@ -35,6 +37,8 @@
 			demographic data.  This occures as the same time as the first updates.
 			</p>
 		</div>
+	</div>
+	<div class="mainColumn">
 		<div class="rightColumn">
 			<h3>Application User Anonimity</h3>
 		</div>
