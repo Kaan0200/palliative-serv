@@ -47,6 +47,7 @@ if($_SESSION['valid'] == false){ header("Location: index.php"); }
 			<a href="settings/settings.php">
 				<div class="squircleButton_right">Admin Settings</div>
 			</a>
+			<div style="height:40px"> </div>
 			<a href="settings/admininfo.php">
 				<div class="squircleButton_right">Administrative Information</div>
 			</a>
