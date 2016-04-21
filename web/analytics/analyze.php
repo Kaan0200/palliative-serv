@@ -46,7 +46,7 @@
 		$result5 = mysqli_fetch_assoc($age5);
 		$result6 = mysqli_fetch_assoc($age6);
 		// make into a table
-		echo "<table border=\"1\"><tr><td>Age Bracket</td><td>User Count</td></tr>";
+		echo "<table style=\"margin-bottom:10px\" border=\"1\"><tr><td>Age Bracket</td><td>User Count</td></tr>";
 		echo "<tr><td>Below 25</td><td>".$result1['a']."</td></tr>";
 		echo "<tr><td>25 to 30</td><td>".$result2['a']."</td></tr>";
 		echo "<tr><td>30 to 35</td><td>".$result3['a']."</td></tr>";
@@ -55,18 +55,11 @@
 		echo "<tr><td>Above 50</td><td>".$result6['a']."</td></tr>";
 		echo "</table>";
 		
-		//post graduate percentage
-		$totalUsersCount = mysqli_query($con, "SELECT COUNT(*) AS c FROM app_users;");
-		$postGradResults = mysqli_query($con, "SELECT COUNT(*) AS c FROM app_users WHERE postGrad = 1;");
-		$totalUsers = mysqli_fetch_assoc($totalUsersCount);
-		$postGrads = mysqli_fetch_assoc($postGradResults);
-		// print out results
-		echo "Of ".$totalUsers['c']." app users, ".$postGrads['c']." are Post-Graduate.";
 		
 		//Experience
 		
 		//Certification
-		echo "<table border=\"1\">";
+		echo "<table style=\"margin-bottom:10px\" border=\"1\">";
 		echo "<tr><td>Certification</td><td>User Count</td></tr>";
 		$certResult = mysqli_query($con, "SELECT cert, COUNT(cert) AS d FROM app_users GROUP BY cert;");
 		if ($certResult->num_rows > 0) {
@@ -77,7 +70,7 @@
 		echo "</table>";
 			
 		//Practice
-		echo "<table border=\"1\">";
+		echo "<table style=\"margin-bottom:10px\" border=\"1\">";
 		echo "<tr><td>Practice Type</td><td>User Count</td></tr>";
 		$certResult = mysqli_query($con, "SELECT practice, COUNT(practice) AS p FROM app_users GROUP BY practice;");
 		if ($certResult->num_rows > 0) {
@@ -86,6 +79,15 @@
 			}
 		}
 		echo "</table>";
+		
+		//post graduate percentage
+		$totalUsersCount = mysqli_query($con, "SELECT COUNT(*) AS c FROM app_users;");
+		$postGradResults = mysqli_query($con, "SELECT COUNT(*) AS c FROM app_users WHERE postGrad = 1;");
+		$totalUsers = mysqli_fetch_assoc($totalUsersCount);
+		$postGrads = mysqli_fetch_assoc($postGradResults);
+		// print out results
+		echo "Of ".$totalUsers['c']." app users, ".$postGrads['c']." are Post-Graduate.";
+		echo "<hr>";
 	}
 	else {
 	  	echo "<h3>Select a type of analysis</h3>";
