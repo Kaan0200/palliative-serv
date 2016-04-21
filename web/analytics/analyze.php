@@ -54,6 +54,14 @@
 		echo "<tr><td>40 to 50</td><td>".$result5['a']."</td></tr>";
 		echo "<tr><td>Above 50</td><td>".$result6['a']."</td></tr>";
 		echo "</table>";
+		
+		//post graduate percentage
+		$totalUsersCount = mysqli_query($con, "SELECT COUNT(*) AS c FROM app_users;");
+		$postGradResults = mysqli_query($con, "SELECT COUNT(*) AS c FROM app_users WHERE postGrad = 1;");
+		$totalUsers = mysqli_fetch_assoc($totalUsersCount);
+		$postGrads = mysqli_fetch_assoc($postGradResults);
+		// print out results
+		echo "Of ".$totalUsers['c']." app users, ".$postGrads['c']." are Post-Graduate.";
 	}
 	else {
 	  	echo "<h3>Select a type of analysis</h3>";
