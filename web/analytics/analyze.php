@@ -30,6 +30,30 @@
 	}
 	else if ($_GET['view'] == 3) {
 		echo "<h3>These tables show various collected demographic information regarding who uses the mobile application.</h3>";
+		
+		// execute all age queries
+		$age1 = mysqli_query($con, "SELECT COUNT(id) FROM app_users WHERE age < 25;");
+		$age2 = mysqli_query($con, "SELECT COUNT(id) FROM app_users WHERE age >= 25 AND age < 30;");
+		$age3 = mysqli_query($con, "SELECT COUNT(id) FROM app_users WHERE age >= 30 AND age < 35;");
+		$age4 = mysqli_query($con, "SELECT COUNT(id) FROM app_users WHERE age >= 35 AND age < 40;");
+		$age5 = mysqli_query($con, "SELECT COUNT(id) FROM app_users WHERE age >= 40 AND age < 50;");
+		$age6 = mysqli_query($con, "SELECT COUNT(id) FROM app_users WHERE age >= 50;");
+		// get the result
+		$result1 = mysqli_fetch_assoc($age1);
+		$result2 = mysqli_fetch_assoc($age2);
+		$result3 = mysqli_fetch_assoc($age3);
+		$result4 = mysqli_fetch_assoc($age4);
+		$result5 = mysqli_fetch_assoc($age5);
+		$result6 = mysqli_fetch_assoc($age6);
+		// make into a table
+		echo "<table border=\"1\"><tr><td>Age Bracket</td><td>User Count</td></tr>";
+		echo "<tr><td>Below 25</td><td>".$result1."</td></tr>";
+		echo "<tr><td>25 to 30</td><td>".$result2."</td></tr>";
+		echo "<tr><td>30 to 35</td><td>".$result3."</td></tr>";
+		echo "<tr><td>35 to 40</td><td>".$result4."</td></tr>";
+		echo "<tr><td>40 to 50</td><td>".$result5."</td></tr>";
+		echo "<tr><td>Above 50</td><td>".$result6."</td></tr>";
+		echo "</table>";
 	}
 	else {
 	  	echo "<h3>Select a type of analysis</h3>";
