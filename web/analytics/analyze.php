@@ -62,6 +62,30 @@
 		$postGrads = mysqli_fetch_assoc($postGradResults);
 		// print out results
 		echo "Of ".$totalUsers['c']." app users, ".$postGrads['c']." are Post-Graduate.";
+		
+		//Experience
+		
+		//Certification
+		echo "<table border=\"1\">";
+		echo "<tr><td>Certification</td><td>User Count</td></tr>";
+		$certResult = mysqli_query($con, "SELECT cert, COUNT(cert) AS d FROM app_users GROUP BY cert;");
+		if ($certResult->num_rows > 0) {
+			while($row = mysqli_fetch_assoc($certResult)){
+				echo "<tr><td>".$row['cert']."</td><td>".$row['d']."</td></tr>";
+			}
+		}
+		echo "</table>";
+			
+		//Practice
+		echo "<table border=\"1\">";
+		echo "<tr><td>Practice Type</td><td>User Count</td></tr>";
+		$certResult = mysqli_query($con, "SELECT practice, COUNT(practice) AS p FROM app_users GROUP BY practice;");
+		if ($certResult->num_rows > 0) {
+			while($row = mysqli_fetch_assoc($certResult)){
+				echo "<tr><td>".$row['practice']."</td><td>".$row['p']."</td></tr>";
+			}
+		}
+		echo "</table>";
 	}
 	else {
 	  	echo "<h3>Select a type of analysis</h3>";
