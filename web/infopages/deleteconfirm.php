@@ -31,6 +31,7 @@
   if (isset($_POST['Submit'])) {
 	  error_log("deleting page with id".$_POST['id']);
 	  $query = "CALL Delete_page(".$_POST['id'].")";
+	  mysqli_query($con, $query);
 	  echo "<h3 style=\"color:green\">Page Deleted Successfully</h3>";
 	  
   }

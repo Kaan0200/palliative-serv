@@ -59,9 +59,8 @@ if (isset($_POST['Submit'])) {
 		}
 	// handle the detail text
 	$detailtext = clean_input($_POST["detail"]);
-	if (preg_match("/^[a-zA-Z .,\-\!\?]*$/", $detailtext)) {
-		$textDetErr = "Invalid characters included in detail text block.  Allowed characters \n";
-		$textDetErr = $textDetErr . "punctuation and hyphens. \n";
+	if (strpos($detailtext,"'")) {
+			$textDetErr = "Invalid characters included in detail text block.";
 	}
 	// handle the link text
 	$linktext = clean_input($_POST["linktext"]);
