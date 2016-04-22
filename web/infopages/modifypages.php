@@ -47,25 +47,25 @@ if (isset($_POST['Submit'])) {
 		$titleErr = "Title is required for an article";
 	} else {
 		$title = clean_input($_POST["title"]);
-		if (preg_match("[\'\"\<\>]",$title)) {
+		if (preg_match("/[\'\"\<\>]/",$title)) {
 			$titleErr = "Illegal character in title. \n";
 		}
 	}
 	// handle the maintext
 	$text = clean_input($_POST["text"]);
-	if (preg_match("^[a-zA-Z .,\-\!\?]*$", $text)) {
+	if (preg_match("/^[a-zA-Z .,\-\!\?]*$/", $text)) {
 		$textErr = "Invalid characters included in text block.  Allowed characters are \n";
 		$textErr = $textErr . "punctuation and hyphens. \n";
 		}
 	// handle the detail text
 	$detailtext = clean_input($_POST["detail"]);
-	if (preg_match("^[a-zA-Z .,\-\!\?]*$", $detailtext)) {
+	if (preg_match("/^[a-zA-Z .,\-\!\?]*$/", $detailtext)) {
 		$textDetErr = "Invalid characters included in detail text block.  Allowed characters \n";
 		$textDetErr = $textDetErr . "punctuation and hyphens. \n";
 	}
 	// handle the link text
 	$linktext = clean_input($_POST["linktext"]);
-	if (preg_match("[\'\"\<\>]",$linktext)) {
+	if (preg_match("/[\'\"\<\>]/",$linktext)) {
 		$linkTextErr = "Illegal character in link text. \n";
 	}
 	
