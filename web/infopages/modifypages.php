@@ -59,9 +59,9 @@ if (isset($_POST['Submit'])) {
 		}
 	// handle the detail text
 	$detailtext = clean_input($_POST["detail"]);
-	if (strpos($detailtext,"'")) {
+	/*if (strpos($detailtext,"'")) {
 			$textDetErr = "Invalid characters included in detail text block.";
-	}
+	}*/
 	// handle the link text
 	$linktext = clean_input($_POST["linktext"]);
 	if (preg_match("/[\'\"\<\>]/",$linktext)) {
