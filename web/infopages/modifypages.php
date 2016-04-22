@@ -53,19 +53,19 @@ if (isset($_POST['Submit'])) {
 	}
 	// handle the maintext
 	$text = clean_input($_POST["text"]);
-	if (preg_match("[^\w\.@-]", $text)) {
+	if (!preg_match("^[a-zA-Z .,\-\!\?]*$", $text)) {
 		$textErr = "Invalid characters included in text block.  Allowed characters are \n";
-		$textErr = $textErr . "periods, @ symbol, underscore, or hyphen.";
+		$textErr = $textErr . "punctuation and hyphens.";
 	}
 	// handle the detail text
 	$detailtext = clean_input($_POST["detail"]);
-	if (preg_match("[^\w\.@-]", $detailtext)) {
+	if (!preg_match("^[a-zA-Z .,\-\!\?]*$", $detailtext)) {
 		$textDetErr = "Invalid characters included in detail text block.  Allowed characters\n";
-		$textDetErr = $textDetErr . "are periods, @ symbol, underscore, or hyphen.";
+		$textDetErr = $textDetErr . "punctuation and hyphens.";
 	}
 	// handle the link text
 	$linktext = clean_input($_POST["linktext"]);
-	if (!preg_match("/^[a-zA-Z0-9 \?\!]*$/",$linktext)) {
+	if (!preg_match("^[a-zA-Z .,\-\!\?]*$",$linktext)) {
 		$linkTextErr = "Only letters, numbers, punctuation, and white space allowed in the subtitle";
 	}
 	
