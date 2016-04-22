@@ -48,25 +48,25 @@ if (isset($_POST['Submit'])) {
 	} else {
 		$title = clean_input($_POST["title"]);
 		if (!preg_match("/^[a-zA-Z0-9 \?\!]*$/",$title)) {
-			$titleErr = "Only letters, numbers, punctuation, and white space allowed in the title";
+			$titleErr = "Only letters, numbers, punctuation, and white space allowed in the title \n";
 		}
 	}
 	// handle the maintext
 	$text = clean_input($_POST["text"]);
-	if (!preg_match("^[a-zA-Z .,\-\!\?]*$", $text)) {
+	if (preg_match("^[a-zA-Z .,\-\!\?]*$", $text)) {
 		$textErr = "Invalid characters included in text block.  Allowed characters are \n";
-		$textErr = $textErr . "punctuation and hyphens.";
-	}
+		$textErr = $textErr . "punctuation and hyphens. \n";
+		}
 	// handle the detail text
 	$detailtext = clean_input($_POST["detail"]);
-	if (!preg_match("^[a-zA-Z .,\-\!\?]*$", $detailtext)) {
-		$textDetErr = "Invalid characters included in detail text block.  Allowed characters\n";
-		$textDetErr = $textDetErr . "punctuation and hyphens.";
+	if (preg_match("^[a-zA-Z .,\-\!\?]*$", $detailtext)) {
+		$textDetErr = "Invalid characters included in detail text block.  Allowed characters \n";
+		$textDetErr = $textDetErr . "punctuation and hyphens. \n";
 	}
 	// handle the link text
 	$linktext = clean_input($_POST["linktext"]);
-	if (!preg_match("^[a-zA-Z .,\-\!\?]*$",$linktext)) {
-		$linkTextErr = "Only letters, numbers, punctuation, and white space allowed in the subtitle";
+	if (preg_match("^[a-zA-Z .,\-\!\?]*$",$linktext)) {
+		$linkTextErr = "Only letters, numbers, punctuation, and white space allowed in the subtitle \n";
 	}
 	
 	$parent_id = $_POST['parent_id'];

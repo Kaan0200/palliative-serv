@@ -43,6 +43,7 @@
 						echo "<td><a href=\"newpages.php?id=".$row["id"]."\"><div class=\"squircleButton_right\">Select Parent</div></a></td>";
 					} else if ($newpage == 0) {
 						echo "<td><a href=\"modifypages.php?id=".$row["id"]."\"><div class=\"squircleButton_right\">Select Page</div></a></td>";
+						echo "<td><a href=\"deleteconfirm.php?id=".$row["id"]."\"\><div class=\"squircleButton_right\">Delete Page</div></a></td>";
 					}
 					echo "</tr>";
 				}
