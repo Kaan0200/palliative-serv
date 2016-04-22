@@ -15,7 +15,6 @@
   echo "<hr>";
   
   $page_to_del = $_GET["id"];
-  $_POST['id'] = $page_to_del;
   $con = get_connection();
   $query = "SELECT title FROM pages WHERE id =".$page_to_del.";";
   $result = mysqli_query($con, $query);
@@ -32,11 +31,12 @@
   if (isset($_POST['Submit'])) {
 	  error_log("deleting page with id".$_POST['id']);
 	  $query = "CALL Delete_page(".$_POST['id'].")";
+	  echo "<h3 style=\"color:green\">Page Deleted Successfully</h3>";
 	  
   }
 ?>
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]."?id=".$page_id;?>"> 
-	<input type="hidden">
+	<input type="hidden" name="id" value=<?php echo "\"".$page_to_del."\"" ?>">
 	<input type="submit" name="Submit" value="Confirm Delete"></input>
 </form>
 </body>
