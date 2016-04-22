@@ -138,7 +138,7 @@ if (isset($_POST['Submit'])) {
 		<br>
 		<div class="LabelColumn">Detail Text:</div>
 		<div class="InputColumn">
-			<textarea rows="5" cols="50" style="width:100%" name="detailtext"><?php echo $detailtext;?></textarea>
+			<textarea rows="5" cols="50" style="width:100%" name="detail"><?php echo $detailtext;?></textarea>
 		</div>
 		<br>
 		<div class="LabelColumn">Link Text:</div>
