@@ -16,11 +16,17 @@
   
   $page_to_del = $_GET["id"];
   $con = get_connection();
+  $query = "SELECT title FROM pages WHERE id =".$page_to_del.";";
+  $result = mysqli_query($con, $query);
+  while ($row = mysqli_fetch_assoc($result)) {
+	  echo "<h4>Page Selected: \"".$row['title']."\"</h4>";
+  }
   $query = "SELECT COUNT(*) AS c FROM pages WHERE parent_id = ".$page_to_del.";";
   $result = mysqli_query($con, $query);
   while ($row = mysqli_fetch_assoc($result)) {
 	  echo "<h4>There are ".$row['c']." pages that are the children of the page selected to be deleted</h4>";
   }
+
   
   if (isset($_POST['Submit'])) {
 	  

@@ -47,8 +47,8 @@ if (isset($_POST['Submit'])) {
 		$titleErr = "Title is required for an article";
 	} else {
 		$title = clean_input($_POST["title"]);
-		if (!preg_match("/^[a-zA-Z0-9 \?\!]*$/",$title)) {
-			$titleErr = "Only letters, numbers, punctuation, and white space allowed in the title \n";
+		if (preg_match("[\'\"]",$title)) {
+			$titleErr = "Illegal character in title. \n";
 		}
 	}
 	// handle the maintext
