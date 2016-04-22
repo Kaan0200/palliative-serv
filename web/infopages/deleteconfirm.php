@@ -30,11 +30,13 @@
 
   
   if (isset($_POST['Submit'])) {
+	  error_log("deleting page with id".$_POST['id']);
 	  $query = "CALL Delete_page(".$_POST['id'].")";
 	  
   }
 ?>
-<form>
+<form method="post" action="<?php echo $_SERVER["PHP_SELF"]."?id=".$page_id;?>"> 
+	<input type="hidden">
 	<input type="submit" name="Submit" value="Confirm Delete"></input>
 </form>
 </body>
