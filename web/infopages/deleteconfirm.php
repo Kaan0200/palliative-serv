@@ -15,6 +15,7 @@
   echo "<hr>";
   
   $page_to_del = $_GET["id"];
+  $_POST['id'] = $page_to_del;
   $con = get_connection();
   $query = "SELECT title FROM pages WHERE id =".$page_to_del.";";
   $result = mysqli_query($con, $query);
@@ -29,6 +30,7 @@
 
   
   if (isset($_POST['Submit'])) {
+	  $query = "CALL Delete_page(".$_POST['id'].")";
 	  
   }
 ?>

@@ -47,7 +47,7 @@ if (isset($_POST['Submit'])) {
 		$titleErr = "Title is required for an article";
 	} else {
 		$title = clean_input($_POST["title"]);
-		if (preg_match("[\'\"]",$title)) {
+		if (preg_match("[\'\"\<\>]",$title)) {
 			$titleErr = "Illegal character in title. \n";
 		}
 	}
@@ -65,8 +65,8 @@ if (isset($_POST['Submit'])) {
 	}
 	// handle the link text
 	$linktext = clean_input($_POST["linktext"]);
-	if (preg_match("^[a-zA-Z .,\-\!\?]*$",$linktext)) {
-		$linkTextErr = "Only letters, numbers, punctuation, and white space allowed in the subtitle \n";
+	if (preg_match("[\'\"\<\>]",$linktext)) {
+		$linkTextErr = "Illegal character in link text. \n";
 	}
 	
 	$parent_id = $_POST['parent_id'];
